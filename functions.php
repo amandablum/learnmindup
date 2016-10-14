@@ -121,7 +121,6 @@ function mindup_scripts() {
 	$media = '';
 	wp_enqueue_style( $handle, $src, $deps, $ver, $media );
 	wp_enqueue_style(  'google-fonts',               add_query_arg( $font_args, '//fonts.googleapis.com/css' ),   array(), null );
-	wp_enqueue_script( 'mindup-interactive',         get_template_directory_uri() . '/js/bundle.js',          array(), MINDUP_VERSION, true );
 	wp_enqueue_script( 'mindup-navigation',          get_template_directory_uri() . '/js/navigation.js',          array(), MINDUP_VERSION, true );
 	wp_enqueue_script( 'mindup-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), MINDUP_VERSION, true );
 	wp_enqueue_script( 'mindup-tabs',                get_template_directory_uri() . '/js/tabs.js',                array( 'jquery' ), MINDUP_VERSION, true );
@@ -142,8 +141,7 @@ require get_template_directory() . '/inc/extras.php';        // Custom functions
 require get_template_directory() . '/inc/customizer.php';    // Customizer additions
 require get_template_directory() . '/inc/jetpack.php';       // Load Jetpack compatibility file
 require get_template_directory() . '/inc/pagination.php';    // Custom Paginations
-if ( function_exists( 'wpp_get_mostpopular' ) )
-	require get_template_directory() . '/inc/customize-popular-posts.php'; // Load filtered html output for WPP plugin
+
 
 if ( ! function_exists( 'mindup_sidebars' ) ) :
 /**
