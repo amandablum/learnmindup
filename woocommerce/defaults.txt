@@ -1,0 +1,16 @@
+/* 
+** Commerce Responsive Transactional Emails
+** notification-emails.com
+** WooCommerce Version 2.3.0+
+*/
+
+Start by uploading the 'woocommerce' folder from the item pack into your theme folder. e.g. 'yourtheme/woocommerce'.
+
+To update the colors,  in your Wordpress Dashboard, go to WooCommerce > Settings and click the 'Emails' tab. Use the Color fields to update the templates theme. Paste your logo URL to the  'Header Image' field, to add a image-based logo (max width 144px).
+
+* Default Colors 
+
+Base Colour: #c4ae85
+Background Colour: #f5f4f0
+Email Body Background Colour: #ffffff
+Email Body Text Colour: #828688
