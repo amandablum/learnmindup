@@ -106,23 +106,9 @@ function mindup_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'mindup_excerpt_more' );
 
 /**
- * Removes update notifications for everybody except admin users
- */
-function mindup_tame_update_notifications() {
-
-	if ( ! current_user_can( 'update_core' ) ) {
-
-		remove_action( 'admin_notices', 'update_nag', 3 );
-
-	}
-
-}
-add_action( 'admin_head', 'mindup_tame_update_notifications', 1 );
-
-/**
  * Remove the admin bar and its padding from everybody but admins
  */
-function mindup_remove_admin_bar() {
+function mindup_rm_admin_bar() {
 
 	if ( ! current_user_can( 'administrator' ) && ! is_admin() ) {
 
@@ -131,4 +117,62 @@ function mindup_remove_admin_bar() {
 	}
 
 }
-add_action( 'after_setup_theme', 'mindup_remove_admin_bar' );
+add_action( 'after_setup_theme', 'mindup_rm_admin_bar' );
+
+/**
+ * Admin only functions
+ */
+if ( is_admin() ) :
+
+	if ( defined( 'DOING_AJAX' ) && DOING_AJAX ) return;
+	if ( defined( 'DOING_CRON' ) && DOING_CRON ) return;
+
+	/**
+	 * Removes update notifications for everybody except admin users
+	 */
+	function mindup_tame_update_notifications() {
+
+		if ( ! current_user_can( 'update_core' ) ) {
+
+			remove_action( 'admin_notices', 'update_nag', 3 );
+
+		}
+
+	}
+	add_action( 'admin_head', 'mindup_tame_update_notifications', 1 );
+
+	/**
+	 * Remove admin menu objects
+	 */
+	function mindup_rm_admin_comments_menu() {
+
+		remove_menu_page( 'edit-comments.php' );
+		remove_submenu_page( 'options-general.php', 'options-discussion.php' );
+
+	}
+	add_action( 'admin_menu', 'mindup_rm_admin_comments_menu' );
+
+	/**
+	 * Removes some meta boxes from default pages screen
+	 */
+	function mindup_rm_page_metaboxes() {
+
+		remove_meta_box( 'commentstatusdiv', 'page', 'normal' ); // discussion metabox
+		remove_meta_box( 'commentsdiv',      'page', 'normal' ); // comments metabox
+
+	}
+	add_action( 'admin_menu', 'mindup_rm_page_metaboxes' );
+
+	/**
+	 * Removes some dashboard widgets
+	 */
+	function mindup_rm_dashboard_metaboxes() {
+
+		remove_action(   'welcome_panel',         'wp_welcome_panel'  ); // wordpress welcome box
+		remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' ); // quick draft box
+		remove_meta_box( 'dashboard_primary',     'dashboard', 'side' ); // wordpress news blog box
+
+	}
+	add_action( 'wp_dashboard_setup', 'mindup_rm_dashboard_metaboxes' );
+
+endif; // end admin only funcs

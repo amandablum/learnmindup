@@ -65,7 +65,6 @@ font-family: 'Raleway', sans-serif;
 # Content
 	## Posts and pages
 	## Asides
-	## Comments
 # Infinite scroll
 # Media
 	## Captions
@@ -2498,17 +2497,6 @@ a:active {
 .archive .format-aside .entry-title,
 .format-aside .entry-title {
 	display: none;
-}
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-.comment-content a {
-	word-wrap: break-word;
-}
-
-.bypostauthor {
-	display: block;
 }
 
 /*--------------------------------------------------------------
