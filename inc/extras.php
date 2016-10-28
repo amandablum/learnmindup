@@ -144,13 +144,14 @@ if ( is_admin() ) :
 	/**
 	 * Remove admin menu objects
 	 */
-	function mindup_rm_admin_comments_menu() {
+	function mindup_rm_admin_menus() {
 
-		remove_menu_page( 'edit-comments.php' );
+		remove_menu_page( 'edit.php' );          // Posts
+		remove_menu_page( 'edit-comments.php' ); // Comments
 		remove_submenu_page( 'options-general.php', 'options-discussion.php' );
 
 	}
-	add_action( 'admin_menu', 'mindup_rm_admin_comments_menu' );
+	add_action( 'admin_menu', 'mindup_rm_admin_menus' );
 
 	/**
 	 * Removes some meta boxes from default pages screen
