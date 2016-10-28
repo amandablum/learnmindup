@@ -10,7 +10,7 @@
  * Added is_product for woocommerce
  * @see https://docs.woothemes.com/document/conditional-tags/
  */
-if ( is_single() || is_page_template( 'tpl-repo.php' ) ) :
+if ( is_single() ) :
 
 	if ( class_exists( 'WooCommerce' ) )
 		if ( is_product() ) return; ?>

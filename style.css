@@ -982,16 +982,14 @@ body.page-template-tpl-fullwidthsidebar #secondary {
 }
 
 body.single #secondary,
-body.blog #secondary,
-body.page-template-tpl-repo #secondary {
+body.blog #secondary {
 	width: 26%;
 	float: left;
 	padding-right: 14px;
 }
 
 body.single #primary,
-body.blog #primary,
-body.page-template-tpl-repo #primary {
+body.blog #primary {
 	width: 74%;
 	float: right;
 	padding-left: 25px;
@@ -1297,8 +1295,7 @@ body.archive div.content {
 }
 
 body.archive .content .entry-meta,
-body.blog .content .entry-meta,
-body.page-template-tpl-repo .content .entry-meta {
+body.blog .content .entry-meta {
 	display: none;
 }
 
@@ -1319,14 +1316,12 @@ body.page-template-tpl-repo .content .entry-meta {
 }
 
 body.archive .content .entry-content,
-body.blog .content .entry-content,
-body.page-template-tpl-repo .content .entry-content {
+body.blog .content .entry-content {
 	margin-top: 0px;
 }
 
 body.archive .content .entry-content p:first-child,
-body.blog .content .entry-content p:first-child,
-body.page-template-tpl-repo .content .entry-content p:first-child {
+body.blog .content .entry-content p:first-child {
 	margin-top: 10px;
 }
 
@@ -2501,7 +2496,7 @@ a:active {
 --------------------------------------------------------------*/
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title,
-.page-template-tpl-repo .format-aside .entry-title {
+.format-aside .entry-title {
 	display: none;
 }
 
@@ -2682,8 +2677,7 @@ object {
 
 	body.single #primary,
 	body.blog #primary,
-	body.page #primary,
-	body.page-template-tpl-repo #primary {
+	body.page #primary {
 		padding-left: 0;
 		border-left: 0;
 	}
@@ -2887,8 +2881,7 @@ object {
 		font-size: 1.5rem;
 	}
 
-	body.blog #primary,
-	body.page-template-tpl-repo #primary {
+	body.blog #primary {
 		padding-left: 0;
 		border-left: 0;
 	}
