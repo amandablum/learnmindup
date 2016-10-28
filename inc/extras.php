@@ -104,3 +104,31 @@ function mindup_excerpt_more( $more ) {
 
 }
 add_filter( 'excerpt_more', 'mindup_excerpt_more' );
+
+/**
+ * Removes update notifications for everybody except admin users
+ */
+function mindup_tame_update_notifications() {
+
+	if ( ! current_user_can( 'update_core' ) ) {
+
+		remove_action( 'admin_notices', 'update_nag', 3 );
+
+	}
+
+}
+add_action( 'admin_head', 'mindup_tame_update_notifications', 1 );
+
+/**
+ * Remove the admin bar and its padding from everybody but admins
+ */
+function mindup_remove_admin_bar() {
+
+	if ( ! current_user_can( 'administrator' ) && ! is_admin() ) {
+
+		show_admin_bar( false );
+
+	}
+
+}
+add_action( 'after_setup_theme', 'mindup_remove_admin_bar' );
