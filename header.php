@@ -39,7 +39,7 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'menu', 'mindup' ); ?></button>
 			<div id="both-menus">
-				<?php wp_nav_menu( array( 'theme_location' => 'header-right','menu_class' => 'header-right' ) ); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'header-right', 'container_class' => 'menu-header-right-nav-container', 'menu_id' => 'menu-header-right-nav', 'menu_class' => 'header-right' ) ); ?>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</div> <!-- /both-menus -->
 		</nav><!-- #site-navigation -->
