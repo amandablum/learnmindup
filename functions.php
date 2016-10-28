@@ -197,37 +197,37 @@ endif;
 * Merge Tags as Dynamic Population Parameters
 * http://gravitywiz.com/dynamic-products-via-post-meta/
 */
-add_filter('gform_pre_render', 'gw_prepopluate_merge_tags');
 function gw_prepopluate_merge_tags($form) {
-    
-    $filter_names = array();
-    
-    foreach($form['fields'] as &$field) {
-        
-        if(!rgar($field, 'allowsPrepopulate'))
-            continue;
-        
-        // complex fields store inputName in the "name" property of the inputs array
-        if(is_array(rgar($field, 'inputs')) && $field['type'] != 'checkbox') {
-            foreach($field['inputs'] as $input) {
-                if(rgar($input, 'name'))
-                    $filter_names[] = array('type' => $field['type'], 'name' => rgar($input, 'name'));
-            }
-        } else {
-            $filter_names[] = array('type' => $field['type'], 'name' => rgar($field, 'inputName'));
-        }
-        
-    }
-    
-    foreach($filter_names as $filter_name) {
-        
-        $filtered_name = GFCommon::replace_variables_prepopulate($filter_name['name']);
-        
-        if($filter_name['name'] == $filtered_name)
-            continue;
-        
-        add_filter("gform_field_value_{$filter_name['name']}", create_function("", "return '$filtered_name';"));
-    }
-    
-    return $form;
+
+	$filter_names = array();
+
+	foreach($form['fields'] as &$field) {
+
+		if(!rgar($field, 'allowsPrepopulate'))
+			continue;
+
+		// complex fields store inputName in the "name" property of the inputs array
+		if(is_array(rgar($field, 'inputs')) && $field['type'] != 'checkbox') {
+			foreach($field['inputs'] as $input) {
+				if(rgar($input, 'name'))
+					$filter_names[] = array('type' => $field['type'], 'name' => rgar($input, 'name'));
+			}
+		} else {
+			$filter_names[] = array('type' => $field['type'], 'name' => rgar($field, 'inputName'));
+		}
+
+	}
+
+	foreach($filter_names as $filter_name) {
+
+		$filtered_name = GFCommon::replace_variables_prepopulate($filter_name['name']);
+
+		if($filter_name['name'] == $filtered_name)
+			continue;
+
+		add_filter("gform_field_value_{$filter_name['name']}", create_function("", "return '$filtered_name';"));
+	}
+
+	return $form;
 }
+add_filter( 'gform_pre_render', 'gw_prepopluate_merge_tags' );
