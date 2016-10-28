@@ -6,7 +6,7 @@
  */
 
 /**
- * Conditional for popular posts sidebar.
+ * Conditional for popular posts sidebar. //removed pop posts
  * Added is_product for woocommerce
  * @see https://docs.woothemes.com/document/conditional-tags/
  */
@@ -20,46 +20,8 @@ if ( is_single() || is_page_template( 'tpl-repo.php' ) ) :
 		<?php get_search_form(); ?>
 
 		<ul class="tabs">
-			<li><a href="#tab1">Popular</a></li>
 			<li><a href="#tab2">Recent</a></li>
 		</ul>
-		<div id="tab1">
-			<?php
-			if ( function_exists( 'wpp_get_mostpopular' ) ) :
-
-				/*
-				 * Remove most recent sticky post from WPP
-				 * Since we're prioritizing the first sticky post, hide only the first one in the array
-				 * @see plugin settings /wp-admin/options-general.php?page=wordpress-popular-posts&tab=params
-				 */
-				$sticky = get_option( 'sticky_posts' );
-
-				// Make sure there's something in sticky var
-				if ( empty( $sticky ) ) :
-					$sticky = "0";
-				else :
-					$sticky = $sticky[0];
-				endif;
-
-				/*
-				 * Call WP Popular Posts plugin
-				 * Filtered by action: wpp_custom_html
-				 * PID param hides first sticky post
-				 */
-				$popular_posts_args = array (
-					'pid'            => 'pid="' . $sticky . '"',
-					'limit'          => 6,
-					'range'          => 'all',
-					'title_length'   => 25,
-					'title_by_words' => true,
-					'post_type'      => 'post',
-				);
-				wpp_get_mostpopular( $popular_posts_args );
-			else :
-				echo '<p>no popular posts or wpp plugin is broken/off</p>';
-			endif;
-			?>
-		</div>
 		<div id="tab2">
 			<?php
 			$recent_args = array (
