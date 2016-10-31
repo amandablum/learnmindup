@@ -1388,6 +1388,23 @@ article h2.entry-title {
 }
 
 
+/* activity template-part */
+.lesson-activity .activity-details {
+	display: block;
+	overflow: hidden;
+}
+
+.lesson-activity .activity-details img {
+	float: left;
+	margin: 0 10px 0 0;
+	border: 1px solid #324459;
+}
+
+.lesson-activity ul {
+	margin-left: 1em;
+}
+
+
 /*--------------------------------------------------------------
 # Pagebuilder
 --------------------------------------------------------------*/
