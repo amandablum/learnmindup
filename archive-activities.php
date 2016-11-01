@@ -23,8 +23,49 @@ get_header(); ?>
 			<h3 class="lesson-step">Step 4: Integrate the Lesson</h3>
 			
 			<div id="actarch"><!-- begin activity archive -->
+				
 				<div id="archfilt"><!-- begin activity filters -->
-					
+							<div class="activity-select-filter">	
+								<label>Age:</label>						
+								<select>
+							    <option>Select ages</option>
+							    <option>3</option>
+							    <option>4</option>
+							    <option>5</option>
+							  </select>
+							</div><!-- end activity-select-filter -->
+
+							<div class="activity-select-filter">	
+								<label>Author:</label>						
+								<select>
+							    <option>Select author</option>
+							    <option>me</option>
+							    <option>you</option>
+							  </select>
+							</div><!-- end activity-select-filter -->
+
+							<div class="activity-select-filter">	
+								<label>Subject:</label>						
+								<select>
+							    <option>Select subject</option>
+							    <option>3</option>
+							    <option>4</option>
+							    <option>5</option>
+							  </select>
+							</div><!-- end activity-select-filter -->
+							
+							<div class="activity-select-filter">	
+								<label>Special<br /> Needs:</label>						
+								<select>
+							    <option>Select a need</option>
+							    <option>3</option>
+							    <option>4</option>
+							    <option>5</option>
+							  </select>
+							</div><!-- end activity-select-filter -->
+							
+							<input type="submit" class="button" name="apply_filter" value="Apply Filter"/>
+							
 				</div><!-- end activity filters -->
 			
 				<div class="row">
