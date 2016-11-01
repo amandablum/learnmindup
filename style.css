@@ -414,6 +414,50 @@ blockquote.pullquote {
 	clear: none;
 }
 
+blockquote.full-width-background {
+	border: none;
+	background: #09aae2;
+	color: #fff;
+	font-style: italic;
+	margin: 0 8px;
+	-webkit-box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+	-moz-box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+	box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+}
+
+.tip-full {
+	display: block;
+	overflow: hidden;
+	margin: 8px 2px;
+	padding: 30px 30px 30px 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	background: #09aae2;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	-moz-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	border-radius: 18px;
+	min-width: 180px;
+}
+
+.tip-quarter {
+	display:inline-block;
+	width: 25%;
+	overflow: hidden;
+	margin: 8px 2px;
+	padding: 30px 30px 30px 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	background: #09aae2;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	-moz-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	border-radius: 18px;
+	min-width: 180px;
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -1388,6 +1432,321 @@ article h2.entry-title {
 }
 
 
+/* activity template-part */
+.activity-details {
+	display: block;
+	overflow: hidden;
+}
+
+.activity-details img {
+	float: left;
+	margin: 0 10px 0 0;
+	border: 1px solid #324459;
+}
+
+.lesson-activity ul {
+	margin-left: 1em;
+}
+
+/* activity archive */
+
+#actarch {
+	background: #f3a129;
+	padding: 16px 16px 34px 32px;
+	margin: 10px 0 0 0;
+}
+
+#archfilt {
+	margin: 12px 0 28px -12px;
+}
+
+#archfilt .activity-select-filter {
+ 	color: #fff;	
+ 	font-size: .9rem;
+ 	letter-spacing: .03em;
+ 	font-weight: 300;
+ 	display: inline-block;
+ 	margin: 0 6px 0 6px;
+}
+
+#archfilt label {
+	float:left;
+	margin-right: 10px;
+	display:inline-block;
+	overflow:hidden;
+	line-height: 1.2em;
+	vertical-align: middle;
+	height: 37px;
+	display: flex;
+  align-items: center;
+}
+
+#archfilt button, #archfilt input, #archfilt select, #archfilt textarea {
+  float:left;
+  font-family:"Open Sans", sans-serif;
+  font-size:.9rem;
+  font-weight:400;
+  line-height:1.5;
+	padding-left: 12px;
+	-webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  background: #f3a129;
+  border: 1px solid #fff;
+  background-image:
+          linear-gradient(45deg, transparent 50%, #fff),
+          linear-gradient(135deg, #fff, transparent 50%),
+          linear-gradient(to right, #fff, #fff);
+  background-position:
+          calc(100% - 20px) calc(1em + 0px),
+          calc(100% - 15px) calc(1em + 0px),
+          calc(100% - 2.5em) 0.4em;
+  background-size:
+          5px 5px,
+          5px 5px,
+          1px 1.5em;
+  background-repeat: no-repeat;
+  width: 160px !important;
+	height: 37px;
+}
+
+#archfilt button, #archfilt input[type="button"], #archfilt input[type="reset"], #archfilt input[type="submit"] {
+  background:#FFF;
+  border:0;
+  border-radius:40px;
+  color: #FCB54D;
+  font-size:.9rem;
+  letter-spacing:2px;
+  line-height:1;
+  padding:	0.2em .8em 0.2em !important;
+  text-transform:uppercase;
+  transition:all 0.2s ease;
+  float:right;
+  margin: 0;
+}
+
+#archfilt button:hover, #archfilt input[type="button"]:hover, #archfilt input[type="reset"]:hover, #archfilt input[type="submit"]:hover {
+	background: #ffeacb;
+}
+
+.row {
+	clear: both;
+	padding: 0 0 0 12px;
+	margin: 0;
+}
+
+.row:before,
+.row:after { content:""; display:table;}
+.row:after { clear:both;}
+.row { zoom:1; /* For IE 6/7 */}
+
+.row-item {
+	display: inline-block;
+	position: relative;
+	float:left;
+	min-height: 330px;
+	background: #fff;
+	width: 31%;
+	margin: 20px 20px 0 0;
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 16px 16px 0 16px;
+  border: 4px solid #09AAE2;
+}
+
+.row-item:hover {
+	background: #cee7ef;
+}
+
+.darkbg {
+	background: #09AAE2;
+	border-color: #fff;
+	color: #fff;
+}
+
+.darkbg:hover {
+	background: #1292be; 
+}
+
+.darkbg h4 {
+	color: #fff!important;
+}
+
+body.page-template-archive-activities h3 {
+	font-family: "Permanent Marker", cursive;
+}
+
+body.page-template-archive-activities h1.entry-title {
+	text-align: center;
+}
+
+h3.lesson-step {
+	color: #324459;
+	font-weight: normal;
+	letter-spacing: .03em; 
+	font-size: 1.2rem; 
+	margin: 0;
+	padding: 0 0 0 42px;
+}
+
+.row-item h4 {
+	color: #09AAE2;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: .001em;
+	margin: 0;
+	line-height: 1.2em;
+	font-size: 1.3rem;
+}
+
+.row-item a {display:block;}
+
+body.page-template-archive-activities .activity-details {
+	font-size: .9rem;
+	margin: 8px 0;
+	font-weight: 600;
+}
+
+.entry-preview p {
+	margin: 0;
+	padding: 0;
+}
+
+.entry-preview {
+	padding: 16px 0;
+	font-size: 1.1rem;
+	line-height: 1.2em;
+}
+
+.right-arrow {
+	font-size: 3rem; 
+	line-height: .8em;
+	text-align: right;
+	display:block;
+	padding: 0 12px 6px 0;
+	color: #f3a129;
+	text-shadow: 0 1px 0px #fff;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+body.page-template-archive-activities #primary .row-item a,
+body.page-template-archive-activities #primary .row-item a:hover,
+body.page-template-archive-activities #primary .row-item a:visited,
+body.page-template-archive-activities #primary .row-item a:active {
+	color: #324459;
+	text-transform: none;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+body.page-template-archive-activities #primary .row-item a:hover,
+body.page-template-archive-activities #primary .row-item a:active {
+	color: #324459!important;
+}
+
+body.page-template-archive-activities #primary .darkbg a,
+body.page-template-archive-activities #primary .darkbg a:hover,
+body.page-template-archive-activities #primary .darkbg a:visited,
+body.page-template-archive-activities #primary .darkbg a:active {
+	color: #fff;
+	text-transform: none;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+body.page-template-archive-activities #primary .darkbg a:hover,
+body.page-template-archive-activities #primary .darkbg a:active {
+	color: #fff!important;
+}
+
+.arch-pagination {
+	display:block;
+	text-align: center;
+	font-size: 0.875rem;
+	padding: 20px 0;
+	margin: 30px 0 0 -25px;
+}
+
+.arch-pagination a.prev {
+	display: none;
+}
+
+.arch-pagination .page-numbers {
+	border: 1px solid #fff;
+	padding: 4px 8px;
+	color: #474e5d;
+	margin: 0 4px;
+}
+
+#primary .arch-pagination a.page-numbers,
+#primary .arch-pagination a.page-numbers:visited,
+#primary .arch-pagination a.page-numbers:hover,
+#primary .arch-pagination a.page-numbers:active {
+	color: #fff;
+	font-weight: 400;
+}
+
+.arch-pagination .page-numbers.current {
+	background: #fff;
+	color: #FCB54D;
+	border: 0;
+	border: 1px solid #fff;
+}
+
+.arch-pagination .page-numbers.dots {
+	border: 0;
+	padding-bottom: 0;
+}
+
+@media (max-width: 1150px) {
+	.row-item {
+		width: 42%;
+	}
+	#archfilt {
+		text-align: center;
+	}
+}
+
+@media (max-width: 800px) {
+	#actarch {
+		padding: 16px 24px 16px 16px;
+		margin: 0 0 0 0;
+	}
+	.row-item {
+		width: 100%;
+		min-height: auto;
+		margin: 20px 0 0 0;
+		padding-bottom: 12px;
+	}
+	h3.lesson-step {
+		padding: 0;
+		text-align: center;
+	}	
+	#archfilt button, #archfilt input[type="button"], #archfilt input[type="reset"], #archfilt input[type="submit"] {
+		display:block;
+		float:none;
+		margin: 12px auto 0 auto;
+	}
+	#archfilt label {
+		width: 80px;
+		text-align: right!important;
+		display:inline-block;
+		text-align: right;
+	}
+	.arch-pagination {
+		margin: 30px 0 0 0;
+	}
+}
+
+
 /*--------------------------------------------------------------
 # Pagebuilder
 --------------------------------------------------------------*/
@@ -1430,7 +1789,6 @@ article h2.entry-title {
 .acf h2 {
 	margin-top: 0;
 }
-
 
 .onecolumnhero .container.image {
 	background-repeat: no-repeat;
