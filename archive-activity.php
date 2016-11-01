@@ -1,12 +1,10 @@
 <?php
 /**
- * Activity Archive 
- * 
- * Template Name: Activity Archive
+ * The template for displaying CPT:Activity archive pages.
  *
  * @package mindup
- * @css AHawkins
  */
+
 get_header(); ?>
 
 <div id="primary" class="content-area">
@@ -17,80 +15,80 @@ get_header(); ?>
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			</header><!-- .entry-header -->
 			<div class="entry-content">
-			
+
 			<h3 class="lesson-step">Step 4: Integrate the Lesson</h3>
-			
+
 			<div id="actarch"><!-- begin activity archive -->
-				
+
 				<div id="archfilt"><!-- begin activity filters -->
-							<div class="activity-select-filter">	
-								<label>Age:</label>						
+							<div class="activity-select-filter">
+								<label>Age:</label>
 								<select>
-							    <option>Select ages</option>
-							    <option>3</option>
-							    <option>4</option>
-							    <option>5</option>
-							  </select>
+									<option>Select ages</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
 							</div><!-- end activity-select-filter -->
 
-							<div class="activity-select-filter">	
-								<label>Author:</label>						
+							<div class="activity-select-filter">
+								<label>Author:</label>
 								<select>
-							    <option>Select author</option>
-							    <option>me</option>
-							    <option>you</option>
-							  </select>
+									<option>Select author</option>
+									<option>me</option>
+									<option>you</option>
+								</select>
 							</div><!-- end activity-select-filter -->
 
-							<div class="activity-select-filter">	
-								<label>Subject:</label>						
+							<div class="activity-select-filter">
+								<label>Subject:</label>
 								<select>
-							    <option>Select subject</option>
-							    <option>3</option>
-							    <option>4</option>
-							    <option>5</option>
-							  </select>
+									<option>Select subject</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
 							</div><!-- end activity-select-filter -->
-							
-							<div class="activity-select-filter">	
-								<label>Special<br /> Needs:</label>						
+
+							<div class="activity-select-filter">
+								<label>Special<br /> Needs:</label>
 								<select>
-							    <option>Select a need</option>
-							    <option>3</option>
-							    <option>4</option>
-							    <option>5</option>
-							  </select>
+									<option>Select a need</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
 							</div><!-- end activity-select-filter -->
-							
+
 							<input type="submit" class="button" name="apply_filter" value="Apply Filter"/>
-							
+
 				</div><!-- end activity filters -->
-			
+
 				<div class="row">
 					<?php
 					while ( have_posts() ) : the_post();
-					
+
 					get_template_part( 'template-parts/content', 'activity-entry' );
-					
+
 					endwhile; // End of the loop.
 					?>
 				</div><!-- end row -->
-				
+
 				<div class="arch-pagination">
-						<span class='page-numbers current'>1</span>
-						<a class='page-numbers' href='#'>2</a>
-						<a class='page-numbers' href='#'>3</a>
-						<a class='page-numbers' href='#'>4</a>
-						<a class='page-numbers' href='#'>5</a>
-						<a class='page-numbers' href='#'>6</a>
-						<a class='page-numbers' href='#'>7</a>
-						<a class='page-numbers' href='#'>8</a>
-						<a class="next page-numbers" href="#">&raquo;</a>
+					<span class='page-numbers current'>1</span>
+					<a class='page-numbers' href='#'>2</a>
+					<a class='page-numbers' href='#'>3</a>
+					<a class='page-numbers' href='#'>4</a>
+					<a class='page-numbers' href='#'>5</a>
+					<a class='page-numbers' href='#'>6</a>
+					<a class='page-numbers' href='#'>7</a>
+					<a class='page-numbers' href='#'>8</a>
+					<a class="next page-numbers" href="#">&raquo;</a>
 				</div><!-- end pagination -->
-				
+
 			</div><!-- end activity archive -->
 			</div><!-- end entry-content -->
-			
+
 			<footer class="entry-footer">
 				<?php
 					edit_post_link(

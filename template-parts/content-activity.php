@@ -1,9 +1,8 @@
 <?php
 /**
  * Lesson Activity LAYOUT
- * 
+ *
  * @package mindup
- * @css AHawkins
  */
 ?>
 
@@ -13,10 +12,10 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-content lesson-activity">
-		
+
 <!-- this html block displays the small thumbnail to the left of lesson details (top of page 20 in mock-up)
 	<span class="activity-details">
-		<img src="." /> 
+		<img src="." />
 		Age: 3,4,5,6 <br />
 		Subject: English <br />
 		ADHD, Hearing Impairment
