@@ -1457,7 +1457,7 @@ article h2.entry-title {
 }
 
 #archfilt {
-	margin: 0 0 28px -12px;
+	margin: 12px 0 28px -12px;
 }
 
 #archfilt .activity-select-filter {
@@ -1667,6 +1667,45 @@ body.page-template-archive-activities #primary .darkbg a:active {
 	color: #fff!important;
 }
 
+.arch-pagination {
+	display:block;
+	text-align: center;
+	font-size: 0.875rem;
+	padding: 20px 0;
+	margin: 30px 0 0 -25px;
+}
+
+.arch-pagination a.prev {
+	display: none;
+}
+
+.arch-pagination .page-numbers {
+	border: 1px solid #fff;
+	padding: 4px 8px;
+	color: #474e5d;
+	margin: 0 4px;
+}
+
+#primary .arch-pagination a.page-numbers,
+#primary .arch-pagination a.page-numbers:visited,
+#primary .arch-pagination a.page-numbers:hover,
+#primary .arch-pagination a.page-numbers:active {
+	color: #fff;
+	font-weight: 400;
+}
+
+.arch-pagination .page-numbers.current {
+	background: #fff;
+	color: #FCB54D;
+	border: 0;
+	border: 1px solid #fff;
+}
+
+.arch-pagination .page-numbers.dots {
+	border: 0;
+	padding-bottom: 0;
+}
+
 @media (max-width: 1150px) {
 	.row-item {
 		width: 42%;
@@ -1702,12 +1741,10 @@ body.page-template-archive-activities #primary .darkbg a:active {
 		display:inline-block;
 		text-align: right;
 	}
+	.arch-pagination {
+		margin: 30px 0 0 0;
+	}
 }
-
-
-
-
-
 
 
 /*--------------------------------------------------------------
@@ -1752,7 +1789,6 @@ body.page-template-archive-activities #primary .darkbg a:active {
 .acf h2 {
 	margin-top: 0;
 }
-
 
 .onecolumnhero .container.image {
 	background-repeat: no-repeat;
