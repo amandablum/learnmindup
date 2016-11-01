@@ -7,6 +7,7 @@
  */
 
 /**
+ * ACF Hyperloop for flexible content_type on pagebuilder layouts
  * to init: do_action( 'mindup_hyperloop_pagebuilder' );
  */
 function acf_mindup_hyperloop_pagebuilder() {
@@ -149,26 +150,39 @@ add_action( 'mindup_hyperloop_pagebuilder', 'acf_mindup_hyperloop_pagebuilder' )
 
 
 /**
+ * ACF Hyperloop for Activity CPT layouts
  * to init: do_action( 'mindup_hyperloop_activities' );
  */
 function acf_mindup_hyperloop_activities() {
 
-	// if we have flexible content_type
-	if ( have_rows( 'content_type' ) ) :
+	// pull and sanitize vars
+	$time_commit = get_field( 'time_commitment' );           // Time Picker
 
-		// start the hyperloop through the flexible content_type layouts
-		while ( have_rows( 'content_type' ) ) : the_row();
+	/**
+	 * Get repeater info
+	 * @return array
+	 * @see https://www.advancedcustomfields.com/resources/repeater/
+	 */
+	$activity_downloads = get_field( 'activity_dl' );        // Get all rows in repeater
+	$activity_materials = get_field( 'activity_mat' );       // Get all rows in repeater
+	$activity_checklist = get_field( 'activity_checklist' ); // Get all rows in repeater
+	/* TODO EXP
+	$activity_single_file = get_sub_field( 'activity_dl' ); // File
 
+	if ( $rows ) {
+		echo '<ul>';
 
-			///////////////////////
+		foreach( $rows as $row )
+		{
+			echo '<li>sub_field_1 = ' . $row['sub_field_1'] . ', sub_field_2 = ' . $row['sub_field_2'] .', etc</li>';
+		}
 
+		echo '</ul>';
+	}
+	*/
 
-		endwhile; // end while have_rows content_type
-
-	else :
-		echo '<p>Sorry, we can\'t find any content</p>';
-
-	endif; // end if have_rows content_type
+	// load the layout view
+	#require get_template_directory() . '/template-parts/acf-activity.php';
 
 }
 add_action( 'mindup_hyperloop_activities', 'acf_mindup_hyperloop_activities' );
