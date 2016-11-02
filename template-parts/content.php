@@ -10,9 +10,9 @@
 
 <?php
 /*
- * mobile only search
+ * mobile only search  #legacy
  */
-get_template_part( 'template-parts/mobile', 'search' ); ?>
+#get_template_part( 'template-parts/mobile', 'search' ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">

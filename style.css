@@ -1031,7 +1031,7 @@ body.blog #secondary {
 	padding-right: 14px;
 }
 
-body.single #primary,
+body.single:not(.single-lesson) #primary,
 body.blog #primary {
 	width: 74%;
 	float: right;
@@ -1461,7 +1461,7 @@ article h2.entry-title {
 }
 
 #archfilt .activity-select-filter {
- 	color: #fff;	
+ 	color: #fff;
  	font-size: .9rem;
  	letter-spacing: .03em;
  	font-weight: 300;
@@ -1571,7 +1571,7 @@ article h2.entry-title {
 }
 
 .darkbg:hover {
-	background: #1292be; 
+	background: #1292be;
 }
 
 .darkbg h4 {
@@ -1589,8 +1589,8 @@ body.page-template-archive-activities h1.entry-title {
 h3.lesson-step {
 	color: #324459;
 	font-weight: normal;
-	letter-spacing: .03em; 
-	font-size: 1.2rem; 
+	letter-spacing: .03em;
+	font-size: 1.2rem;
 	margin: 0;
 	padding: 0 0 0 42px;
 }
@@ -1625,7 +1625,7 @@ body.page-template-archive-activities .activity-details {
 }
 
 .right-arrow {
-	font-size: 3rem; 
+	font-size: 3rem;
 	line-height: .8em;
 	text-align: right;
 	display:block;
@@ -1729,7 +1729,7 @@ body.page-template-archive-activities #primary .darkbg a:active {
 	h3.lesson-step {
 		padding: 0;
 		text-align: center;
-	}	
+	}
 	#archfilt button, #archfilt input[type="button"], #archfilt input[type="reset"], #archfilt input[type="submit"] {
 		display:block;
 		float:none;
