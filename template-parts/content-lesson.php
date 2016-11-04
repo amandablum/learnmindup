@@ -53,7 +53,7 @@
 		$our_current_step = get_post_field( 'menu_order', $post->ID, 'raw' );
 
 		// devnote
-		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step ) . ' of parent lesson ' . $our_parent_id;
+		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step+1 ) . ' of parent lesson ' . $our_parent_id;
 
 
 		// Build Switch to decide what stuff to show on which steps
