@@ -28,9 +28,9 @@
 			// Get the parent post permalink
 			$lmnd_parent_permalink = get_permalink( $post->post_parent );
 			// Display parent title and link
-			echo '<a href="' . $lmnd_parent_permalink . '"><h1 class="entry-title">' . $lmnd_parent_title . '</h1></a>';
+			echo '<a href="' . $lmnd_parent_permalink . '"><h1 class="entry-title">' . $lmnd_parent_title . '</h1></a>' . PHP_EOL;
 			// Display child (step) title
-			the_title( '<h2 class="entry-title entry-title-step">', '</h2>' );
+			the_title( '<h3 class="lesson-step">', '</h3>' );
 
 		}
 		?>
@@ -60,17 +60,65 @@
 		// Build Switch to decide what stuff to show on which steps
 		switch ( absint( $our_current_step ) ) {
 			case 2:
-				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>';
-				echo '<p class="copyblock-step-2">This is the hardcopy for step 2. Lorem ipsum dolor sit amet, id autem consequat nec, ea esse quando vim. Tale meis essent eum ea, usu ut possim audire aliquid. Dolor incorrupte ei mel, appetere electram constituam has ad.</p>';
+				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>' . PHP_EOL;
+				echo '<p class="copyblock-step-2">This is the hardcopy for step 2. Lorem ipsum dolor sit amet, id autem consequat nec, ea esse quando vim. Tale meis essent eum ea, usu ut possim audire aliquid. Dolor incorrupte ei mel, appetere electram constituam has ad.</p>' . PHP_EOL;
 				break;
 			case 3:
-				echo '<p>[devnote][switch] Step 3: load activities `classroom` archive.</p>';
+				echo '<p>[devnote][switch] Step 3: load activities `classroom` archive.</p>' . PHP_EOL;
+
+				// this gets ugly real quick
+				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
+				echo '<div class="row">' . PHP_EOL;
+
+				$activity_args = array(
+					'post_type'      => 'activity',
+					'posts_per_page' => 100,
+					'no_found_rows'  => true,
+				);
+
+				require_once( get_template_directory() . '/template-parts/content-activity-entry.php' );
+
+				echo '</div><!-- end row -->' . PHP_EOL;
+				echo '</div><!-- end activity archive -->' . PHP_EOL;
+
 				break;
 			case 4:
 				echo '<p>[devnote][switch] Step 4: load activities `interdiscipline` archive.</p>';
+
+				// this gets ugly real quick
+				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
+				echo '<div class="row">' . PHP_EOL;
+
+				$activity_args = array(
+					'post_type'      => 'interdiscipline',
+					'posts_per_page' => 100,
+					'no_found_rows'  => true,
+				);
+
+				require_once( get_template_directory() . '/template-parts/content-activity-entry.php' );
+
+				echo '</div><!-- end row -->' . PHP_EOL;
+				echo '</div><!-- end activity archive -->' . PHP_EOL;
+
 				break;
 			case 5:
 				echo '<p>[devnote][switch] Step 5: load activities `life` archive.</p>';
+
+				// this gets ugly real quick
+				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
+				echo '<div class="row">' . PHP_EOL;
+
+				$activity_args = array(
+					'post_type'      => 'life',
+					'posts_per_page' => 100,
+					'no_found_rows'  => true,
+				);
+
+				require_once( get_template_directory() . '/template-parts/content-activity-entry.php' );
+
+				echo '</div><!-- end row -->' . PHP_EOL;
+				echo '</div><!-- end activity archive -->' . PHP_EOL;
+
 				break;
 			case 1:
 			case 6:
