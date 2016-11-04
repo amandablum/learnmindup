@@ -8,87 +8,50 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php
+		/**
+		 * Check if parent or child.
+		 * If it's a parent, and it has no children, meaning it wasn't redirected
+		 * via lmnd_parent_lesson_redirect(), then we need a fallback message for admins.
+		 *
+		 * If child (step) then display parent title and step title under it.
+		 */
+		if ( empty( $post->post_parent ) ) {
+
+			the_title( '<h1 class="entry-title">', '</h1>' );
+			echo '<p class="devnote">[devnote] This parent lesson post has no steps yet to redirect to.</p>';
+
+		} else {
+
+			// Get the parent post title
+			$lmnd_parent_title     = get_the_title( $post->post_parent );
+			// Get the parent post permalink
+			$lmnd_parent_permalink = get_permalink( $post->post_parent );
+			// Display parent title and link
+			echo '<a href="' . $lmnd_parent_permalink . '"><h1 class="entry-title">' . $lmnd_parent_title . '</h1></a>';
+			// Display child (step) title
+			the_title( '<h2 class="entry-title entry-title-step">', '</h2>' );
+
+		}
+		?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
 
-			/**
-			 * Checks if this is a parent post or not
-			 */
-			if ( empty( $post->post_parent ) ) {
+		// If this is a parent lesson, don't do anything further, bail.
+		if ( empty( $post->post_parent ) ) return;
 
-				echo '<p class="devnote">[devnote] this is the parent post</p>';
+		/**
+		 * At this point we know we're on a child lesson (step) post
+		 */
+		echo '<p class="devnote"> this is a child post of ' . wp_get_post_parent_id( $post->ID );
 
-				/**
-				 * Checks if parent lesson has child posts
-				 *
-				 * @return int count
-				 */
-				function mindup_lesson_has_children() {
-					global $post;
-					return count( get_posts( array( 'post_parent' => $post->ID, 'post_type' => $post->post_type ) ) );
-				}
+		/*
+		 * run the content_type hyperloop
+		 */
+		do_action( 'mindup_hyperloop_pagebuilder' );
 
-				/**
-				 * Checks to make sure this parent has children before querying one
-				 */
-				if ( mindup_lesson_has_children() ) {
-
-					// DEV TESTS
-					echo '<pre>';
-					var_dump( LearnMindUp_Queries::get_single_lesson_steps( get_the_ID() ) );
-					echo '</pre>';
-
-					/**
-					 * Gets the first child step and queries that to display its content
-					 *
-					 * @todo need to check if it actually has steps/children. if not don't do this
-					 */
-					$first_lesson_step  = key( LearnMindUp_Queries::get_single_lesson_steps( get_the_ID() ) );
-
-					$first_lesson_args  = array(
-						'post_type'      => 'lesson',
-						'p'              => $first_lesson_step,
-						'posts_per_page' => 1,
-						'no_found_rows'  => true,
-					);
-
-					$first_lesson_query = new WP_Query( $first_lesson_args );
-
-					if ( $first_lesson_query->have_posts() ) {
-
-						while ( $first_lesson_query->have_posts() ) {
-
-							$first_lesson_query->the_post();
-
-							the_title( '<h3>', '</h3>' );
-
-							/*
-							 * run the content_type hyperloop
-							 */
-							do_action( 'mindup_hyperloop_pagebuilder' );
-
-						}
-
-						wp_reset_postdata();
-
-					} // endif $first_lesson_query
-
-				} // endif mindup_lesson_has_children()
-
-
-			} else { // post seems to be a child (step)
-
-				echo '<p class="devnote"> this is a child post of ' . wp_get_post_parent_id( $post->ID );
-
-				/*
-				 * run the content_type hyperloop
-				 */
-				do_action( 'mindup_hyperloop_pagebuilder' );
-
-			} // endif
 
 		?>
 	</div><!-- .entry-content -->
