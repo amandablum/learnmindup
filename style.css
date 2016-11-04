@@ -744,6 +744,91 @@ a.reset_variations {
 .diagram .social-action { fill: #993a4c; }
 .diagram .social-action.active { fill: #993a4c; }
 
+
+
+
+/* Lesson / Steps Progress bar. stole this from bootstrap:4alpha
+ * @see https://v4-alpha.getbootstrap.com/dist/css/bootstrap.css
+ */
+progress {
+	display: inline-block;
+	vertical-align: baseline;
+	margin-top: 50px;
+}
+.progress {
+  display: block;
+  width: 100%;
+  height: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress[value] {
+  background-color: #eee;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0.25rem;
+}
+
+.progress[value]::-ms-fill {
+  background-color: #0074d9;
+  border: 0;
+}
+
+.progress[value]::-moz-progress-bar {
+  background-color: #0074d9;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.progress[value]::-webkit-progress-value {
+  background-color: #0074d9;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.progress[value="100"]::-moz-progress-bar {
+  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.progress[value="100"]::-webkit-progress-value {
+  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 0.25rem;
+}
+
+base::-moz-progress-bar,
+.progress[value] {
+  background-color: #eee;
+  border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 0\0) {
+  .progress {
+    background-color: #eee;
+    border-radius: 0.25rem;
+  }
+  .progress-bar {
+    display: inline-block;
+    height: 1rem;
+    text-indent: -999rem;
+    background-color: #0074d9;
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+  .progress[width="100%"] {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+}
+
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/

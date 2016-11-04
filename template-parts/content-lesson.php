@@ -55,14 +55,9 @@
 		// devnote
 		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step ) . ' of parent lesson ' . $our_parent_id;
 
-		// $current_user       = wp_get_current_user();
-		// $current_user_id    = $current_user->ID;
-		// $current_user_steps = LearnMindUp_Queries::get_lesson_steps_for_user( $current_user_id, $post->post_parent );
-
-		// var_dump( $current_user_steps );
 
 		// Build Switch to decide what stuff to show on which steps
-		switch ( absint( $our_current_step) ) {
+		switch ( absint( $our_current_step ) ) {
 			case 1:
 				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>';
 				echo '<p class="copyblock-step-2">This is the hardcopy for step 2. Lorem ipsum dolor sit amet, id autem consequat nec, ea esse quando vim. Tale meis essent eum ea, usu ut possim audire aliquid. Dolor incorrupte ei mel, appetere electram constituam has ad.</p>';
@@ -113,11 +108,29 @@
 		}
 
 
+		/**
+		 * Gets current user info
+		 * @var int user id
+		 */
+		$current_user       = wp_get_current_user();
+		$current_user_id    = $current_user->ID;
+
+		/**
+		 * Get current user progression
+		 * @var int progress percentage
+		 */
+		$current_user_steps = LearnMindUp_Queries::get_lesson_steps_for_user( $current_user_id, $post->post_parent );
+		#var_dump( $current_user_steps );
+		$current_user_steps_progress = $current_user_steps['progress'];
+		echo '<progress class="progress" max="100" value="' . $current_user_steps_progress . '"></progress>';
+
+
 
 		?>
 	</div><!-- .entry-content -->
-
+	<?php /*
 	<footer class="entry-footer">
-		<?php mindup_entry_footer(); ?>
+		<?php #mindup_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	*/ ?>
 </article><!-- #post-## -->
