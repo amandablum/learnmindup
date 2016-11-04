@@ -45,12 +45,57 @@
 		/**
 		 * At this point we know we're on a child lesson (step) post
 		 */
-		echo '<p class="devnote"> this is a child post of ' . wp_get_post_parent_id( $post->ID );
+
+		// set var for parent id because we need it a lot
+		$our_parent_id = wp_get_post_parent_id( $post->ID );
+
+		// devnote
+		echo '<p class="devnote"> this is a child post of ' . $our_parent_id;
+
+
+
+
 
 		/*
 		 * run the content_type hyperloop
 		 */
-		do_action( 'mindup_hyperloop_pagebuilder' );
+		#do_action( 'mindup_hyperloop_pagebuilder' );
+
+
+
+
+
+
+
+
+
+		/**
+		 * Gets next / prev steps ids and links and makes all that magic happen
+		 */
+		$lmnd_get_prev_step_id = lmnd_get_prev_step( $post->ID, $our_parent_id );
+		$lmnd_get_next_step_id = lmnd_get_next_step( $post->ID, $our_parent_id );
+
+		if ( $lmnd_get_prev_step_id !== false ) {
+
+			$prev_lesson_step_permalink = get_permalink( $lmnd_get_prev_step_id );
+			echo '<div class="step-link-prev"><a href="' . $prev_lesson_step_permalink . '">Previous</a></div>';
+
+		}
+
+		if ( $lmnd_get_next_step_id !== false ) {
+
+			$next_lesson_step_permalink = get_permalink( $lmnd_get_next_step_id );
+			echo '<div class="step-link-next"><a href="' . $next_lesson_step_permalink . '">Next</a></div>';
+
+		}
+
+
+
+
+
+
+
+
 
 
 		?>
