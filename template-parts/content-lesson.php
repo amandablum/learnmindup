@@ -47,25 +47,48 @@
 		 */
 
 		// set var for parent id because we need it a lot
-		$our_parent_id = wp_get_post_parent_id( $post->ID );
+		$our_parent_id    = wp_get_post_parent_id( $post->ID );
+
+		// Get the current step int.
+		$our_current_step = get_post_field( 'menu_order', $post->ID, 'raw' );
 
 		// devnote
-		echo '<p class="devnote"> this is a child post of ' . $our_parent_id;
+		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step ) . ' of parent lesson ' . $our_parent_id;
 
+		// $current_user       = wp_get_current_user();
+		// $current_user_id    = $current_user->ID;
+		// $current_user_steps = LearnMindUp_Queries::get_lesson_steps_for_user( $current_user_id, $post->post_parent );
 
+		// var_dump( $current_user_steps );
 
+		// Build Switch to decide what stuff to show on which steps
+		switch ( absint( $our_current_step) ) {
+			case 2:
+				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>';
+				echo '<p class="copyblock-step-2">This is the hardcopy for step 2. Lorem ipsum dolor sit amet, id autem consequat nec, ea esse quando vim. Tale meis essent eum ea, usu ut possim audire aliquid. Dolor incorrupte ei mel, appetere electram constituam has ad.</p>';
+				break;
+			case 3:
+				echo '<p>[devnote][switch] Step 3: load activities `classroom` archive.</p>';
+				break;
+			case 4:
+				echo '<p>[devnote][switch] Step 4: load activities `interdiscipline` archive.</p>';
+				break;
+			case 5:
+				echo '<p>[devnote][switch] Step 5: load activities `life` archive.</p>';
+				break;
+			case 1:
+			case 6:
+				echo '<p>[devnote][switch] Step 1, 6: content_type hyperloop pagebuilder</p>';
 
+				/*
+				 * run the content_type hyperloop
+				 */
+				do_action( 'mindup_hyperloop_pagebuilder' );
 
-		/*
-		 * run the content_type hyperloop
-		 */
-		#do_action( 'mindup_hyperloop_pagebuilder' );
-
-
-
-
-
-
+				break;
+			default:
+				echo '<p>[devnote][switch] fail - nothing here.</p>';
+		}
 
 
 
@@ -78,23 +101,16 @@
 		if ( $lmnd_get_prev_step_id !== false ) {
 
 			$prev_lesson_step_permalink = get_permalink( $lmnd_get_prev_step_id );
-			echo '<div class="step-link-prev"><a href="' . $prev_lesson_step_permalink . '">Previous</a></div>';
+			echo '<div class="step-link-prev"><a href="' . $prev_lesson_step_permalink . '" class="btn">Previous</a></div>';
 
 		}
 
 		if ( $lmnd_get_next_step_id !== false ) {
 
 			$next_lesson_step_permalink = get_permalink( $lmnd_get_next_step_id );
-			echo '<div class="step-link-next"><a href="' . $next_lesson_step_permalink . '">Next</a></div>';
+			echo '<div class="step-link-next"><a href="' . $next_lesson_step_permalink . '" class="btn">Next</a></div>';
 
 		}
-
-
-
-
-
-
-
 
 
 
