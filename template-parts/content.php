@@ -34,21 +34,6 @@
 	<div class="entry-content">
 		<?php
 
-			if ( 'lesson' === get_post_type() ) :
-				echo "show LearnMindUp_Queries::get_single_lesson_steps()\n";
-
-				echo "<pre>";
-				/* dump */ var_dump( LearnMindUp_Queries::get_single_lesson_steps( get_the_ID() ) );
-				echo "</pre>";
-
-				// $step = LearnMindUp_Queries::get_single_lesson_steps( get_the_ID() );
-				// foreach ( $step as $id => $id ) {
-				// 	echo get_the_title ( $id ) . ', ';
-				// }
-
-			endif;
-
-
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'mindup' ), array( 'span' => array( 'class' => array() ) ) ),
