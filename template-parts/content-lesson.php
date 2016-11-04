@@ -47,32 +47,33 @@
 		 */
 
 		// set var for parent id because we need it a lot
-		$our_parent_id    = wp_get_post_parent_id( $post->ID );
+		$our_parent_id        = wp_get_post_parent_id( $post->ID );
 
 		// Get the current step int.
-		$our_current_step = get_post_field( 'menu_order', $post->ID, 'raw' );
+		$our_current_step_raw = get_post_field( 'menu_order', $post->ID, 'raw' );
+		$our_current_step     = $our_current_step_raw + 1; // normalize this so less confusing to humans
 
 		// devnote
-		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step+1 ) . ' of parent lesson ' . $our_parent_id;
+		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step ) . ' of parent lesson ' . $our_parent_id;
 
 
 		// Build Switch to decide what stuff to show on which steps
 		switch ( absint( $our_current_step ) ) {
-			case 1:
+			case 2:
 				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>';
 				echo '<p class="copyblock-step-2">This is the hardcopy for step 2. Lorem ipsum dolor sit amet, id autem consequat nec, ea esse quando vim. Tale meis essent eum ea, usu ut possim audire aliquid. Dolor incorrupte ei mel, appetere electram constituam has ad.</p>';
 				break;
-			case 2:
+			case 3:
 				echo '<p>[devnote][switch] Step 3: load activities `classroom` archive.</p>';
 				break;
-			case 3:
+			case 4:
 				echo '<p>[devnote][switch] Step 4: load activities `interdiscipline` archive.</p>';
 				break;
-			case 4:
+			case 5:
 				echo '<p>[devnote][switch] Step 5: load activities `life` archive.</p>';
 				break;
-			case 0:
-			case 5:
+			case 1:
+			case 6:
 				echo '<p>[devnote][switch] Step 1, 6: content_type hyperloop pagebuilder</p>';
 
 				/*
