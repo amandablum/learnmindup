@@ -140,8 +140,8 @@ function acf_mindup_hyperloop_pagebuilder() {
 
 		endwhile; // end while have_rows content_type
 
-	else :
-		echo '<p>Sorry, we can\'t find any content</p>';
+	else:
+		echo '<p>Sorry, we can\'t find any pagebuilder content.</p>';
 
 	endif; // end if have_rows content_type
 
