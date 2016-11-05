@@ -1529,6 +1529,10 @@ article h2.entry-title {
 	border: 1px solid #324459;
 }
 
+.activity-details .activity-term-list-label {
+	font-weight: 700;
+}
+
 .lesson-activity ul {
 	margin-left: 1em;
 }

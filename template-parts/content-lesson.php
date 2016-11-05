@@ -63,7 +63,7 @@
 				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>' . PHP_EOL;
 				echo '<h2>Select Your Students Average Age </h2>' . PHP_EOL;
 				echo '<p class="copyblock-step-2">Don’t be overly concerned about being exact. We use this information to give you more specific language appropriate to this age range and age appropriate activities. You will always have the opportunity to see information for younger and older children, because we know age is just a number and your children are unique. Some may be an older 9 years, or a younger 17. We’ll also have the opportunity to choose activities for a wide range of special needs. </p>' . PHP_EOL;
-	echo lmnd_step_two_dropdown( $post->ID, false );
+				echo lmnd_step_two_dropdown( $post->ID, false );
 				echo '<div class="step-two-content-holder"></div>';
 				break;
 			case 3:

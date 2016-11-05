@@ -39,6 +39,7 @@
 $activity_query = new WP_Query( $activity_args );
 
 if ( $activity_query->have_posts() ) {
+
 	while ( $activity_query->have_posts() ) {
 		$activity_query->the_post();
 
