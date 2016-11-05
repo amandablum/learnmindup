@@ -54,7 +54,7 @@ if ( $activity_query->have_posts() ) {
 				</a><!-- end full box link -->
 
 				<div class="entry-preview">
-					<p><?php the_field('activity_sum'); ?>/p>
+					<p><?php the_field('activity_sum'); ?></p>
 				</div><!-- end entry-preview -->
 
 				<span class="activity-details">
