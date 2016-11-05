@@ -18,13 +18,13 @@
 // var_dump( $activity_downloads );
 // echo '</pre>';
 ?>
-		<span class="activity-details">
+		<div class="activity-details">
 			<img src="." />
-			Age: <?php the_terms( get_the_ID(), 'age-group' ); ?><br>
-			Subject: <?php the_terms( get_the_ID(), 'subject' ); ?><br>
-			<?php the_terms( get_the_ID(), 'needs' ); ?><br>
-			Time Commitment: <?php echo $time_commit; ?>
-		</span>
+			<?php lmnd_term_list( get_the_ID(), 'age-group', 'Age' ); ?>
+			<?php lmnd_term_list( get_the_ID(), 'subject', 'Subject' ); ?>
+			<?php lmnd_term_list( get_the_ID(), 'needs', 'Needs' ); ?>
+			<p><span class="activity-term-list-label">Time Commitment:</span> <?php echo $time_commit; ?></p>
+		</div>
 
 		<?php
 		if ( $activity_materials ) {
@@ -40,7 +40,7 @@
 			echo '<h3>Downloads</h3>';
 			echo '<ul>';
 			foreach( $activity_downloads as $activity_downloads ) {
-				echo '<li>' . $activity_downloads['activity_dl'] . '</li>';
+				echo ! empty( $activity_downloads['activity_dl'] ) ? '<li>' . $activity_downloads['activity_dl'] . '</li>' : '';
 			}
 			echo '</ul>';
 		}
