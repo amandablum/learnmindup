@@ -62,6 +62,8 @@
 			case 2:
 				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>' . PHP_EOL;
 				echo '<p class="copyblock-step-2">This is the hardcopy for step 2. Lorem ipsum dolor sit amet, id autem consequat nec, ea esse quando vim. Tale meis essent eum ea, usu ut possim audire aliquid. Dolor incorrupte ei mel, appetere electram constituam has ad.</p>' . PHP_EOL;
+				echo lmnd_step_two_dropdown( $post->ID, false );
+				echo '<div class="step-two-content-holder"></div>';
 				break;
 			case 3:
 				echo '<p>[devnote][switch] Step 3: load activities `classroom` archive.</p>' . PHP_EOL;
@@ -137,24 +139,9 @@
 
 
 		/**
-		 * Gets next / prev steps ids and links and makes all that magic happen
+		 * Gets all the markup for next / prev step buttons.
 		 */
-		$lmnd_get_prev_step_id = lmnd_get_prev_step( $post->ID, $our_parent_id );
-		$lmnd_get_next_step_id = lmnd_get_next_step( $post->ID, $our_parent_id );
-
-		if ( $lmnd_get_prev_step_id !== false ) {
-
-			$prev_lesson_step_permalink = get_permalink( $lmnd_get_prev_step_id );
-			echo '<div class="step-link-prev"><a href="' . $prev_lesson_step_permalink . '" class="btn">Previous</a></div>';
-
-		}
-
-		if ( $lmnd_get_next_step_id !== false ) {
-
-			$next_lesson_step_permalink = get_permalink( $lmnd_get_next_step_id );
-			echo '<div class="step-link-next"><a href="' . $next_lesson_step_permalink . '" class="btn">Next</a></div>';
-
-		}
+		lmnd_get_step_links( $post->ID, $our_parent_id );
 
 
 		/**

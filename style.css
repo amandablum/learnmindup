@@ -1541,8 +1541,8 @@ article h2.entry-title {
 
 .progress-step .progress-step-title {
 	color: #324459;
-	font-weight: normal; 
-	font-size: 1.1rem; 
+	font-weight: normal;
+	font-size: 1.1rem;
 	margin: 0;
 	text-align:center;
 	clear:both;
@@ -2926,6 +2926,7 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -3098,6 +3099,27 @@ object {
 	display: block;
 }
 
+/* The wrapper for the prev / next links on lesson steps */
+.step-link-wrapper {
+	clear: both;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	padding: 1.5em 0 0;
+}
+
+.step-link-wrapper .step-link-prev {
+	float: left;
+}
+
+.step-link-wrapper .step-link-next {
+	float: right;
+}
+
+.step-link-wrapper .step-link-prev a.btn,
+.step-link-wrapper .step-link-next a.btn {
+	display: block;
+}
 
 /*--------------------------------------------------------------
 ## Responsive Media Queries
