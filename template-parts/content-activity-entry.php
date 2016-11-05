@@ -47,9 +47,10 @@ if ( $activity_query->have_posts() ) {
 		$terms_needs     = get_terms( 'needs' );
 		?>
 		<div class="row-item">
-			<a href="<?php echo get_permalink(); ?>">
+			<a href="<?php echo get_permalink(); ?>" target="_blank">
 
 				<?php the_title( '<h4>', '</h4>' ); ?>
+				</a><!-- end full box link -->
 
 				<div class="entry-preview">
 					<p><?php the_excerpt(); ?></p>
@@ -86,9 +87,10 @@ if ( $activity_query->have_posts() ) {
 						?>
 					</div><!-- end activity-meta -->
 				</span><!-- end activity-details -->
-
+				<a href="<?php echo get_permalink(); ?>" target="_blank">
 				<span class="right-arrow">&#x2192;</span>
-			</a><!-- end full box link -->
+				</a>
+			
 		</div><!-- end row-item -->
 		<?php
 
