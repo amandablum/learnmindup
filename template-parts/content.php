@@ -10,9 +10,9 @@
 
 <?php
 /*
- * mobile only search
+ * mobile only search  #legacy
  */
-get_template_part( 'template-parts/mobile', 'search' ); ?>
+#get_template_part( 'template-parts/mobile', 'search' ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
@@ -24,15 +24,16 @@ get_template_part( 'template-parts/mobile', 'search' ); ?>
 			}
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php mindup_posted_on(); ?>
-		</div><!-- .entry-meta -->
+			<div class="entry-meta">
+				<?php mindup_posted_on(); ?>
+			</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 		<?php
+
 			the_content( sprintf(
 				/* translators: %s: Name of current post. */
 				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'mindup' ), array( 'span' => array( 'class' => array() ) ) ),

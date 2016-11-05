@@ -140,8 +140,8 @@ function acf_mindup_hyperloop_pagebuilder() {
 
 		endwhile; // end while have_rows content_type
 
-	else :
-		echo '<p>Sorry, we can\'t find any content</p>';
+	else:
+		echo '<p>Sorry, we can\'t find any pagebuilder content.</p>';
 
 	endif; // end if have_rows content_type
 
@@ -155,7 +155,11 @@ add_action( 'mindup_hyperloop_pagebuilder', 'acf_mindup_hyperloop_pagebuilder' )
  */
 function acf_mindup_hyperloop_activities() {
 
-	// pull and sanitize vars
+	/**
+	 * Get Time info. not sure this is the time-type intended but for now...
+	 * @return string
+	 * @see https://www.advancedcustomfields.com/resources/time-picker/
+	 */
 	$time_commit = get_field( 'time_commitment' );           // Time Picker
 
 	/**
@@ -166,23 +170,9 @@ function acf_mindup_hyperloop_activities() {
 	$activity_downloads = get_field( 'activity_dl' );        // Get all rows in repeater
 	$activity_materials = get_field( 'activity_mat' );       // Get all rows in repeater
 	$activity_checklist = get_field( 'activity_checklist' ); // Get all rows in repeater
-	/* TODO EXP
-	$activity_single_file = get_sub_field( 'activity_dl' ); // File
-
-	if ( $rows ) {
-		echo '<ul>';
-
-		foreach( $rows as $row )
-		{
-			echo '<li>sub_field_1 = ' . $row['sub_field_1'] . ', sub_field_2 = ' . $row['sub_field_2'] .', etc</li>';
-		}
-
-		echo '</ul>';
-	}
-	*/
 
 	// load the layout view
-	#require get_template_directory() . '/template-parts/acf-activity.php';
+	require get_template_directory() . '/template-parts/acf-activity-single.php';
 
 }
 add_action( 'mindup_hyperloop_activities', 'acf_mindup_hyperloop_activities' );
