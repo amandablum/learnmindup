@@ -16,61 +16,70 @@ get_header(); ?>
 			</header><!-- .entry-header -->
 			<div class="entry-content">
 
+			<!--
 			<h3 class="lesson-step">Step 4: Integrate the Lesson</h3>
+			-->
 
 			<div id="actarch"><!-- begin activity archive -->
+				<!--
+				<div id="archfilt">
+					<form method="post" action="<?php echo esc_url( home_url( '/activities/' ) ); ?>">
 
-				<div id="archfilt"><!-- begin activity filters -->
-							<div class="activity-select-filter">
-								<label>Age:</label>
-								<select>
-									<option>Select ages</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div><!-- end activity-select-filter -->
+						<?php // lmnd_get_activity_arg_dropdown( 'age-group', 'Age', 'Select ages' ); ?>
+						<?php // lmnd_get_activity_arg_dropdown( 'subject', 'Subject', 'Select subject' ); ?>
+						<?php // lmnd_get_activity_arg_dropdown( 'needs', 'Special<br /> Needs', 'Select a need' ); ?>
 
-							<div class="activity-select-filter">
-								<label>Author:</label>
-								<select>
-									<option>Select author</option>
-									<option>me</option>
-									<option>you</option>
-								</select>
-							</div><!-- end activity-select-filter -->
+						<div class="activity-select-filter">
+							<label>Age:</label>
+							<select>
+								<option>Select ages</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
 
-							<div class="activity-select-filter">
-								<label>Subject:</label>
-								<select>
-									<option>Select subject</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div><!-- end activity-select-filter -->
+						<div class="activity-select-filter">
+							<label>Author:</label>
+							<select name="author">
+								<option>Select author</option>
+								<option>me</option>
+								<option>you</option>
+							</select>
+						</div>
 
-							<div class="activity-select-filter">
-								<label>Special<br /> Needs:</label>
-								<select>
-									<option>Select a need</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-								</select>
-							</div><!-- end activity-select-filter -->
+						<div class="activity-select-filter">
+							<label>Subject:</label>
+							<select>
+								<option>Select subject</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
 
-							<input type="submit" class="button" name="apply_filter" value="Apply Filter"/>
+						<div class="activity-select-filter">
+							<label>Special<br /> Needs:</label>
+							<select>
+								<option>Select a need</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+							</select>
+						</div>
 
-				</div><!-- end activity filters -->
+						<input type="submit" class="button" name="apply_filter" value="Apply Filter"/>
+					</form>
+				</div>
+				-->
 
 				<div class="row">
 					<?php
-					while ( have_posts() ) : the_post();
+				//	while ( have_posts() ) : the_post();
 
 					get_template_part( 'template-parts/content', 'activity-entry' );
 
-					endwhile; // End of the loop.
+				//	endwhile; // End of the loop.
 					?>
 				</div><!-- end row -->
 

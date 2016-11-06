@@ -36,6 +36,9 @@
 </div><!-- end row-item -->
 
 */
+
+$activity_args = array( 'post_type' => 'activity', 'nopaging' => true );
+
 $activity_query = new WP_Query( $activity_args );
 
 if ( $activity_query->have_posts() ) {
@@ -91,7 +94,7 @@ if ( $activity_query->have_posts() ) {
 				<a href="<?php echo get_permalink(); ?>" target="_blank">
 				<span class="right-arrow">&#x2192;</span>
 				</a>
-			
+
 		</div><!-- end row-item -->
 		<?php
 
