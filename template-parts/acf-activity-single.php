@@ -28,31 +28,34 @@
 		</div>
 
 		<?php
-		if ( $activity_materials ) {
+		// if ( $activity_materials ) {
+		if ( false !== $check = LearnMindUp_Helper::if_serialized_has_data( $activity_materials ) ) {
 			echo '<h3>Materials</h3>';
 			echo '<ul>';
-			foreach( $activity_materials as $activity_materials ) {
-				echo '<li>' . $activity_materials['activity_mats'] . '</li>';
+			foreach( $activity_materials as $materials ) {
+				echo ! empty( $materials['activity_mats'] ) ? '<li>' . $materials['activity_mats'] . '</li>' : '';
 			}
 			echo '</ul>';
 		}
 
-		if ( $activity_downloads ) {
+		// if ( $activity_downloads ) {
+		if ( false !== $check = LearnMindUp_Helper::if_serialized_has_data( $activity_downloads ) ) {
 			echo '<h3>Downloads</h3>';
 			echo '<ul>';
-			foreach( $activity_downloads as $activity_downloads ) {
-				echo ! empty( $activity_downloads['activity_dl'] ) ? '<li>' . $activity_downloads['activity_dl'] . '</li>' : '';
+			foreach( $activity_downloads as $downloads ) {
+				echo ! empty( $downloads['activity_dl'] ) ? '<li>' . $downloads['activity_dl'] . '</li>' : '';
 			}
 			echo '</ul>';
 		}
 
 		the_content();
 
-		if ( $activity_checklist ) {
+		// if ( $activity_checklist ) {
+		if ( false !== $check = LearnMindUp_Helper::if_serialized_has_data( $activity_checklist ) ) {
 			echo '<h3>Checklist</h3>';
 			echo '<ul>';
-			foreach( $activity_checklist as $activity_checklist ) {
-				echo '<li>' . $activity_checklist['activity_listitems'] . '</li>';
+			foreach( $activity_checklist as $checklist ) {
+				echo ! empty( $checklist['activity_listitems'] ) ? '<li>' . $checklist['activity_listitems'] . '</li>' : '';
 			}
 			echo '</ul>';
 		}
