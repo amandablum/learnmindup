@@ -37,7 +37,9 @@
 
 */
 
-$activity_args = array( 'post_type' => 'activity', 'nopaging' => true );
+if ( empty( $activity_args ) ) {
+	$activity_args = array( 'post_type' => 'activity', 'nopaging' => true );
+}
 
 $activity_query = new WP_Query( $activity_args );
 
