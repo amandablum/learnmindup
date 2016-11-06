@@ -1543,6 +1543,12 @@ article h2.entry-title {
 	margin-left: 1em;
 }
 
+/* step list inside the member setup */
+.member-list-step-items {
+	list-style: none;
+	margin: 0;
+	padding: 1em 0.5em;
+}
 
 /* progress bar */
 .progress-step {}
