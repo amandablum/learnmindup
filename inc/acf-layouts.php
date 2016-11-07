@@ -2,18 +2,20 @@
 /**
  * ACF Hyperloop Layout Builder for all flexible content types
  *
- * to init: do_action( 'mindup_hyperloop' );
- *
  * @package mindup
  * @author ChuckReynolds <chuck@vuurr.com>
  */
 
-function mindup_acf_hyperloop() {
+/**
+ * ACF Hyperloop for flexible content_type on pagebuilder layouts
+ * to init: do_action( 'mindup_hyperloop_pagebuilder' );
+ */
+function acf_mindup_hyperloop_pagebuilder() {
 
 	// if we have flexible content_type
 	if ( have_rows( 'content_type' ) ) :
 
-		// start the hyperloop through the flexible content type layouts
+		// start the hyperloop through the flexible content_type layouts
 		while ( have_rows( 'content_type' ) ) : the_row();
 
 			/**
@@ -26,7 +28,7 @@ function mindup_acf_hyperloop() {
 				$hero_video        = get_sub_field( 'hero_video' );                           // oEmbed
 				$hero_image        = get_sub_field( 'hero_image' );                           // Image
 				$hero_headline     = sanitize_text_field( get_sub_field( 'hero_headline' ) ); // Text
-				$hero_copy         = get_sub_field( 'hero_copy' );     // Text
+				$hero_copy         = get_sub_field( 'hero_copy' );                            // Text
 				$hero_cta_copy     = sanitize_text_field( get_sub_field( 'hero_cta_copy' ) ); // Text
 				$hero_cta_link     = esc_url( get_sub_field( 'hero_cta_link' ) );             // Url
 
@@ -62,13 +64,13 @@ function mindup_acf_hyperloop() {
 			if ( get_row_layout() == '2_column_copy_left_imagevideo_right' ) :
 
 				// pull and sanitize vars
-				$two_col_video_or_imageright = get_sub_field( '2col_video_or_imageright' );                       // Radio - image || video
-				$two_col_videoright          = get_sub_field( '2col_videoright' );                                // oEmbed
-				$two_col_imageright          = get_sub_field( '2col_imageright' );                                // Image
 				$two_col_headlineleft        = sanitize_text_field( get_sub_field( '2col_headlineleft' ) );       // Text
 				$two_col_copyleft            = apply_filters( 'the_content' , get_sub_field( '2col_copyleft' ) ); // Text Area
 				$two_col_ctacopyleft         = sanitize_text_field( get_sub_field( '2col_ctacopyleft' ) );        // Text
 				$two_col_ctalinkleft         = esc_url( get_sub_field( '2col_ctalinkleft' ) );                    // Url
+				$two_col_video_or_imageright = get_sub_field( '2col_video_or_imageright' );                       // Radio - image || video
+				$two_col_videoright          = get_sub_field( '2col_videoright' );                                // oEmbed
+				$two_col_imageright          = get_sub_field( '2col_imageright' );                                // Image
 
 				// load the layout view
 				require get_template_directory() . '/template-parts/acf-2column-leftcopy-rightmedia.php';
@@ -138,10 +140,39 @@ function mindup_acf_hyperloop() {
 
 		endwhile; // end while have_rows content_type
 
-	else :
-		echo '<p>Sorry, we can\'t find any content</p>';
+	else:
+		echo '<p>Sorry, we can\'t find any pagebuilder content.</p>';
 
 	endif; // end if have_rows content_type
 
 }
-add_action( 'mindup_hyperloop', 'mindup_acf_hyperloop' );
+add_action( 'mindup_hyperloop_pagebuilder', 'acf_mindup_hyperloop_pagebuilder' );
+
+
+/**
+ * ACF Hyperloop for Activity CPT layouts
+ * to init: do_action( 'mindup_hyperloop_activities' );
+ */
+function acf_mindup_hyperloop_activities() {
+
+	/**
+	 * Get Time info. not sure this is the time-type intended but for now...
+	 * @return string
+	 * @see https://www.advancedcustomfields.com/resources/time-picker/
+	 */
+	$time_commit = get_field( 'time_commitment' );           // Time Picker
+
+	/**
+	 * Get repeater info
+	 * @return array
+	 * @see https://www.advancedcustomfields.com/resources/repeater/
+	 */
+	$activity_downloads = get_field( 'activity_dl' );        // Get all rows in repeater
+	$activity_materials = get_field( 'activity_mat' );       // Get all rows in repeater
+	$activity_checklist = get_field( 'activity_checklist' ); // Get all rows in repeater
+
+	// load the layout view
+	require get_template_directory() . '/template-parts/acf-activity-single.php';
+
+}
+add_action( 'mindup_hyperloop_activities', 'acf_mindup_hyperloop_activities' );

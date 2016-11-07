@@ -15,9 +15,9 @@ get_header(); ?>
 
 		<?php
 		/*
-		 * run the content types hyperloop
+		 * run the content_type hyperloop
 		 */
-		do_action( 'mindup_hyperloop' ); ?>
+		do_action( 'mindup_hyperloop_pagebuilder' ); ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

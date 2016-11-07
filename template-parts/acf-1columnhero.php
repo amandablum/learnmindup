@@ -31,10 +31,10 @@
 
 				<p><a href="<?php echo $hero_cta_link; ?>" class="btn"><?php echo $hero_cta_copy; ?></a></p>
 
-			<?php 
+			<?php
 			endif; ?>
 		</div>
-	<?php 
+	<?php
 	endif; ?>
 
 </section>

@@ -15,9 +15,7 @@ get_header(); ?>
 		<section class="error-404 not-found">
 
 			<?php
-
-			dynamic_sidebar( '404' );
-
+			dynamic_sidebar( '404_page' );
 			?>
 
 		</section><!-- .error-404 -->
