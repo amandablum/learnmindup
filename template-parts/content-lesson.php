@@ -19,7 +19,6 @@
 		if ( empty( $post->post_parent ) ) {
 
 			the_title( '<h1 class="entry-title">', '</h1>' );
-			echo '<p class="devnote">[devnote] This parent lesson post has no steps yet to redirect to.</p>';
 
 		} else {
 

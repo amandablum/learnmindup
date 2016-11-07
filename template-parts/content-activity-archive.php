@@ -63,7 +63,11 @@ if ( $activity_query->have_posts() ) {
 				</div><!-- end entry-preview -->
 
 				<span class="activity-details">
-					<img src="http://lorempixel.com/100/100/" width="100" height="100" class="alignleft" />
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail( array( 100, 100 ), array( 'class' => 'alignleft' ) );
+					}
+					?>
 					<div class="activity-meta">
 						<?php
 							lmnd_age_range_list( get_the_ID() );

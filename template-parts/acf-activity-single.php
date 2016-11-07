@@ -20,8 +20,10 @@
 // echo '</pre>';
 ?>
 		<div class="activity-details">
-			<img src="." />
 			<?php
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail( array( 100, 100 ), array( 'class' => 'alignleft' ) );
+			}
 				lmnd_term_list( get_the_ID(), 'age-group', 'Age' );
 				lmnd_term_list( get_the_ID(), 'subject', 'Subject' );
 				lmnd_term_list( get_the_ID(), 'needs', 'Needs' );
