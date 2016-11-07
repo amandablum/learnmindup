@@ -77,6 +77,12 @@
 					'post_type'      => 'activity',
 					'posts_per_page' => 100,
 					'no_found_rows'  => true,
+					'meta_query'     => array(
+						array(
+							'key'     => '_activity_type',
+							'value'   => 'classroom',
+						),
+					),
 				);
 
 				require_once( get_template_directory() . '/template-parts/content-activity-entry.php' );
@@ -93,9 +99,15 @@
 				echo '<div class="row">' . PHP_EOL;
 
 				$activity_args = array(
-					'post_type'      => 'interdiscipline',
+					'post_type'      => 'activity',
 					'posts_per_page' => 100,
 					'no_found_rows'  => true,
+					'meta_query'     => array(
+						array(
+							'key'     => '_activity_type',
+							'value'   => 'interdiscipline',
+						),
+					),
 				);
 
 				require_once( get_template_directory() . '/template-parts/content-activity-entry.php' );
@@ -112,9 +124,15 @@
 				echo '<div class="row">' . PHP_EOL;
 
 				$activity_args = array(
-					'post_type'      => 'life',
+					'post_type'      => 'activity',
 					'posts_per_page' => 100,
 					'no_found_rows'  => true,
+					'meta_query'     => array(
+						array(
+							'key'     => '_activity_type',
+							'value'   => 'life',
+						),
+					),
 				);
 
 				require_once( get_template_directory() . '/template-parts/content-activity-entry.php' );
