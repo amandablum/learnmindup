@@ -21,9 +21,11 @@
 ?>
 		<div class="activity-details">
 			<img src="." />
-			<?php lmnd_term_list( get_the_ID(), 'age-group', 'Age' ); ?>
-			<?php lmnd_term_list( get_the_ID(), 'subject', 'Subject' ); ?>
-			<?php lmnd_term_list( get_the_ID(), 'needs', 'Needs' ); ?>
+			<?php
+				lmnd_term_list( get_the_ID(), 'age-group', 'Age' );
+				lmnd_term_list( get_the_ID(), 'subject', 'Subject' );
+				lmnd_term_list( get_the_ID(), 'needs', 'Needs' );
+			?>
 			<p><span class="activity-term-list-label">Time Commitment:</span> <?php echo $time_commit; ?></p>
 		</div>
 
