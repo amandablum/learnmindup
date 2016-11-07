@@ -82,6 +82,11 @@
 							'key'     => '_activity_type',
 							'value'   => 'classroom',
 						),
+						array(
+							'key'     => '_mapped_lesson',
+							'value'   => $our_parent_id,
+							'type'    => 'numeric',
+						),
 					),
 				);
 
@@ -107,6 +112,11 @@
 							'key'     => '_activity_type',
 							'value'   => 'interdiscipline',
 						),
+						array(
+							'key'     => '_mapped_lesson',
+							'value'   => $our_parent_id,
+							'type'    => 'numeric',
+						),
 					),
 				);
 
@@ -131,6 +141,11 @@
 						array(
 							'key'     => '_activity_type',
 							'value'   => 'life',
+						),
+						array(
+							'key'     => '_mapped_lesson',
+							'value'   => $our_parent_id,
+							'type'    => 'numeric',
 						),
 					),
 				);
