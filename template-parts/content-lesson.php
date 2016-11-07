@@ -63,6 +63,7 @@
 			case 3:
 
 				// this gets ugly real quick
+				echo '<p class="copyblock-step-2">The best way to really learn the MindUP lessons is to practice them. These activities are for your <b>classroom</b>- they will help your students really understand the lesson. Choose atleast 2 activities, but you can choose as many as you like. Click on any of them to open them in a new tab and learn more about them, and hit "Save" on the ones you like to keep them in <a href="http://learn.mindup.org/my-account/members-area/118/my-membership-content/ target="blank">Your Library</a>. You can even develop your own, and submit them back to us at the end of the lesson so other educators can use them.  </p>' . PHP_EOL;
 				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
 				echo '<div class="row">' . PHP_EOL;
 
