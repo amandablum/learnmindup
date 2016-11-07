@@ -53,21 +53,15 @@
 		$our_current_step_raw = get_post_field( 'menu_order', $post->ID, 'raw' );
 		$our_current_step     = $our_current_step_raw + 1; // normalize this so less confusing to humans
 
-		// devnote
-		echo '<p class="devnote">[devnote] This is Step ' . absint( $our_current_step ) . ' of parent lesson ' . $our_parent_id;
-
-
 		// Build Switch to decide what stuff to show on which steps
 		switch ( absint( $our_current_step ) ) {
 			case 2:
-				echo '<p>[devnote][switch] Step 2: copyblock, and ages dropdown select.</p>' . PHP_EOL;
 				echo '<h2>Select Your Students Average Age </h2>' . PHP_EOL;
 				echo '<p class="copyblock-step-2">Don’t be overly concerned about being exact. We use this information to give you more specific language appropriate to this age range and age appropriate activities. You will always have the opportunity to see information for younger and older children, because we know age is just a number and your children are unique. Some may be an older 9 years, or a younger 17. We’ll also have the opportunity to choose activities for a wide range of special needs. </p>' . PHP_EOL;
 				echo lmnd_step_two_dropdown( $post->ID, false );
 				echo '<div class="step-two-content-holder"></div>';
 				break;
 			case 3:
-				echo '<p>[devnote][switch] Step 3: load activities `classroom` archive.</p>' . PHP_EOL;
 
 				// this gets ugly real quick
 				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
@@ -82,6 +76,11 @@
 							'key'     => '_activity_type',
 							'value'   => 'classroom',
 						),
+						array(
+							'key'     => '_mapped_lesson',
+							'value'   => $our_parent_id,
+							'type'    => 'numeric',
+						),
 					),
 				);
 
@@ -92,7 +91,6 @@
 
 				break;
 			case 4:
-				echo '<p>[devnote][switch] Step 4: load activities `interdiscipline` archive.</p>';
 
 				// this gets ugly real quick
 				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
@@ -107,6 +105,11 @@
 							'key'     => '_activity_type',
 							'value'   => 'interdiscipline',
 						),
+						array(
+							'key'     => '_mapped_lesson',
+							'value'   => $our_parent_id,
+							'type'    => 'numeric',
+						),
 					),
 				);
 
@@ -117,7 +120,6 @@
 
 				break;
 			case 5:
-				echo '<p>[devnote][switch] Step 5: load activities `life` archive.</p>';
 
 				// this gets ugly real quick
 				echo '<div id="actarch"><!-- begin activity archive -->' . PHP_EOL;
@@ -132,6 +134,11 @@
 							'key'     => '_activity_type',
 							'value'   => 'life',
 						),
+						array(
+							'key'     => '_mapped_lesson',
+							'value'   => $our_parent_id,
+							'type'    => 'numeric',
+						),
 					),
 				);
 
@@ -143,8 +150,6 @@
 				break;
 			case 1:
 			case 6:
-				echo '<p>[devnote][switch] Step 1, 6: content_type hyperloop pagebuilder</p>';
-
 				/*
 				 * run the content_type hyperloop
 				 */
@@ -152,7 +157,6 @@
 
 				break;
 			default:
-				echo '<p>[devnote][switch] fail - nothing here.</p>';
 		}
 
 
