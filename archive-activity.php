@@ -77,7 +77,7 @@ get_header(); ?>
 					<?php
 				//	while ( have_posts() ) : the_post();
 
-					get_template_part( 'template-parts/content', 'activity-entry' );
+					get_template_part( 'template-parts/content', 'activity-archive' );
 
 				//	endwhile; // End of the loop.
 					?>
