@@ -47,7 +47,7 @@
 			echo '<h3>Downloads</h3>';
 			echo '<ul>';
 			foreach( $activity_downloads as $downloads ) {
-				echo ! empty( $downloads['activity_dl'] ) ? '<li>' . $downloads['activity_dl'] . '</li>' : '';
+				echo ! empty( $downloads['activity_dl'] ) ? '<li><a href="' . $downloads['activity_dl'] . '">FILE DL TEST - ' . $downloads['filename'] . '</a></li>' : '';
 			}
 			echo '</ul>';
 		}
