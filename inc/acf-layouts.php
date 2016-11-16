@@ -99,7 +99,7 @@ function acf_mindup_hyperloop_pagebuilder() {
 
 				// pull and sanitize vars
 				$centered_headline = sanitize_text_field( get_sub_field( 'centered_headline' ) );       // Text
-				$centered_copy     = get_sub_field( 'centered_copy' );
+				$centered_copy     = apply_filters( 'the_content' , get_sub_field( 'centered_copy' ) ); // Text Area
 				$centered_cta_copy = sanitize_text_field( get_sub_field( 'centered_cta_copy' ) );       // Text
 				$centered_cta_link = esc_url( get_sub_field( 'centered_cta_link' ) );                   // Url
 
