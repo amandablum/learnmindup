@@ -45,9 +45,18 @@
 		// if ( $activity_downloads ) {
 		if ( false !== $check = LearnMindUp_Helper::if_serialized_has_data( $activity_downloads ) ) {
 			echo '<h3>Downloads</h3>';
-			echo '<ul>';
+			echo '<ul class="activity-downloads">';
 			foreach( $activity_downloads as $downloads ) {
-				echo ! empty( $downloads['activity_dl'] ) ? '<li><a href="' . $downloads['activity_dl'] . '">FILE DL TEST - ' . $downloads['filename'] . '</a></li>' : '';
+
+				if ( ! empty( $downloads['activity_dl'] ) ) {
+
+					echo '<li><a href="' . $downloads['activity_dl'] . '">';
+					echo ! empty( $downloads['activity_dl_name'] ) ? $downloads['activity_dl_name'] : 'File Download default text';
+					echo '</a></li>';
+
+
+				}
+
 			}
 			echo '</ul>';
 		}
