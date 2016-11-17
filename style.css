@@ -1840,6 +1840,9 @@ body.page-template-archive-activities #primary .darkbg a:active {
 	border: 0;
 	padding-bottom: 0;
 }
+.sel {    c
+	color: #12A79E;
+}
 .clear{
 	clear:both;
 }
