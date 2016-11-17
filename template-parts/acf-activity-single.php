@@ -50,7 +50,7 @@
 
 				if ( ! empty( $downloads['activity_dl'] ) ) {
 
-					echo '<li><a href="' . $downloads['activity_dl'] . '">';
+					echo '<li><a href="' . $downloads['activity_dl'] . '" target="_blank" rel="noopener">';
 					echo ! empty( $downloads['activity_dl_name'] ) ? $downloads['activity_dl_name'] : 'Activity Download';
 					echo '</a></li>';
 
