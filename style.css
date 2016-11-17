@@ -1840,8 +1840,16 @@ body.page-template-archive-activities #primary .darkbg a:active {
 	border: 0;
 	padding-bottom: 0;
 }
-.sel {    c
-	color: #12A79E;
+.sel {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #aaaaaa;
+    font-style: italic;
+}
+.blue {
+    color: #12A79E;
+    font-weight: 700;
+    font-style: normal;
 }
 .clear{
 	clear:both;
