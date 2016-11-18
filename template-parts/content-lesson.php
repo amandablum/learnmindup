@@ -49,8 +49,7 @@
 		$our_parent_id        = wp_get_post_parent_id( $post->ID );
 
 		// Get the current step int.
-		$our_current_step_raw = get_post_field( 'menu_order', $post->ID, 'raw' );
-		$our_current_step     = $our_current_step_raw + 1; // normalize this so less confusing to humans
+		$our_current_step     = LearnMindUp_Helper::get_normal_step_count( $post->ID );
 
 		// Build Switch to decide what stuff to show on which steps
 		switch ( absint( $our_current_step ) ) {
@@ -162,7 +161,6 @@
 		}
 
 
-
 		/**
 		 * Gets all the markup for next / prev step buttons.
 		 */
@@ -173,7 +171,7 @@
 		 * Get current user progression
 		 * @var int progress percentage
 		 */
-		lmnd_get_lesson_progress_bar( $our_current_step, $our_parent_id );
+		lmnd_get_lesson_progress_bar( $post->ID, $our_parent_id, $our_current_step );
 
 
 		?>
