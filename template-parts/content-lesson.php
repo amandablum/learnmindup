@@ -170,21 +170,10 @@
 
 
 		/**
-		 * Gets current user info
-		 * @var int user id
-		 */
-		$current_user       = wp_get_current_user();
-		$current_user_id    = $current_user->ID;
-
-		/**
 		 * Get current user progression
 		 * @var int progress percentage
 		 */
-		$current_user_steps = LearnMindUp_Queries::get_lesson_steps_for_user( $current_user_id, $post->post_parent );
-		#var_dump( $current_user_steps );
-		$current_user_steps_progress = $current_user_steps['progress'];
-		echo '<progress class="progress" max="100" value="' . $current_user_steps_progress . '"></progress>';
-
+		lmnd_get_lesson_progress_bar( $our_current_step, $our_parent_id );
 
 
 		?>
