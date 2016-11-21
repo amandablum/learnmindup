@@ -21,15 +21,15 @@ if ( false !== $check = LearnMindUp_Helper::if_serialized_has_data( $reflis_repe
 		<section class="acf reference-list">
 			<div class="container">
 				<div class="twocolumn-leftmedia">
-					<img class="image-responsive" src="<?php echo $reflis_image; ?>" alt="">
+					<a href="<?php echo $reflis_image; ?>" target="_blank"><img class="image-responsive" src="<?php echo $reflis_image; ?>" alt=""></a>
 				</div>
 				<div class="twocolumn-rightcopy">
-					<h2><?php echo $reflis_refname; ?></h2>
+					<h2><a href="<?php echo $reflis_image; ?>" target="_blank"><?php echo $reflis_refname; ?></a></h2>
 					<p><?php echo $reflis_copy; ?></p>
 					<?php
 					if ( $reflis_button && $reflis_buttonlink ) : ?>
 
-						<p><a href="<?php echo $reflis_buttonlink; ?>" class="btn"><?php echo $reflis_button; ?></a></p>
+						<p><a href="<?php echo $reflis_buttonlink; ?>" class="btn" target="_blank"><?php echo $reflis_button; ?></a></p>
 
 					<?php
 					endif; ?>
