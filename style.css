@@ -1553,36 +1553,65 @@ article h2.entry-title {
 	padding: 1em 0.5em;
 }
 
-/* progress bar */
-.progress-step {}
-.progress-step .step-link-prev {float:left;}
-.progress-step .step-link-next {float:right;}
 
-.progress-step .progress-step-title {
+/* Lesson Steps Progress */
+.step-link-wrapper {
+	clear: both;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	padding: 1.5em 0 0;
+}
+
+.step-link-wrapper .step-link-prev {
+	float: left;
+}
+
+.step-link-wrapper .step-link-next {
+	float: right;
+}
+
+.step-link-wrapper .step-link-prev a.btn,
+.step-link-wrapper .step-link-next a.btn {
+	display: block;
+}
+
+p.lesson-progress-intro {
 	color: #324459;
 	font-weight: normal;
 	font-size: 1.1rem;
-	margin: 0;
 	text-align:center;
 	clear:both;
 	display:block;
-	padding: 30px 0 0 0;
-	margin: 0 0 0 0;
+	padding: 10px 0 0 0;
+	margin: 0 0 12px 0;
 }
 
-.progress-step .progress-next-step a {
-	font-weight: 400!important;
-	text-transform: none!important;
-	color: #ccc!important;
-	text-align: right;
-	display:block;
-	font-size: 1rem;
-}
+.progress-single-title {
+	font-size: .9rem; 
+	font-weight: normal; 
+	letter-spacing: .01em;
+	max-width: 48%;
+	}
+	
+.progress-single-title-left {
+	float:left;
+	}
+	
+.progress-single-title-right {
+	float:right;
+	}
 
-.progress-step .progress {
-	margin-top: 12px;
-	margin-bottom: 0;
-}
+.lesson-progress-wrapper progress {
+	margin-top: 0;
+	}
+	
+.lesson-progress-wrapper {
+	display:block; 
+	overflow:hidden; 
+	margin: 0 0 4em 0;
+	}
+
 
 /* activity archive */
 #actarch {
@@ -3130,28 +3159,6 @@ object {
 }
 
 .gallery-caption {
-	display: block;
-}
-
-/* The wrapper for the prev / next links on lesson steps */
-.step-link-wrapper {
-	clear: both;
-	width: 100%;
-	display: block;
-	overflow: hidden;
-	padding: 1.5em 0 0;
-}
-
-.step-link-wrapper .step-link-prev {
-	float: left;
-}
-
-.step-link-wrapper .step-link-next {
-	float: right;
-}
-
-.step-link-wrapper .step-link-prev a.btn,
-.step-link-wrapper .step-link-next a.btn {
 	display: block;
 }
 
