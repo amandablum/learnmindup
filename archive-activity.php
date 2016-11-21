@@ -21,14 +21,14 @@ get_header(); ?>
 			-->
 
 			<div id="actarch"><!-- begin activity archive -->
-				<!--
 				<div id="archfilt">
-					<form method="post" action="<?php echo esc_url( home_url( '/activities/' ) ); ?>">
+					<form method="post" action="<?php echo esc_url_raw( home_url( '/activities/' ) ); ?>">
 
-						<?php // lmnd_get_activity_arg_dropdown( 'age-group', 'Age', 'Select ages' ); ?>
-						<?php // lmnd_get_activity_arg_dropdown( 'subject', 'Subject', 'Select subject' ); ?>
-						<?php // lmnd_get_activity_arg_dropdown( 'needs', 'Special<br /> Needs', 'Select a need' ); ?>
+						<?php lmnd_get_activity_arg_dropdown( 'age-group', 'Age', 'Select ages' ); ?>
+						<?php lmnd_get_activity_arg_dropdown( 'subject', 'Subject', 'Select subject' ); ?>
+						<?php lmnd_get_activity_arg_dropdown( 'needs', 'Special<br /> Needs', 'Select a need' ); ?>
 
+						<!--
 						<div class="activity-select-filter">
 							<label>Age:</label>
 							<select>
@@ -67,11 +67,14 @@ get_header(); ?>
 								<option>5</option>
 							</select>
 						</div>
+						-->
 
-						<input type="submit" class="button" name="apply_filter" value="Apply Filter"/>
+						<input type="submit" class="button" name="lmnd-filter-activities" value="Apply Filter"/>
+
 					</form>
+
+					<a href="<?php echo esc_url_raw( home_url( '/activities/' ) ); ?>">Reset</a>
 				</div>
-				-->
 
 				<div class="row">
 					<?php
@@ -83,6 +86,7 @@ get_header(); ?>
 					?>
 				</div><!-- end row -->
 
+				<!-- commenting out because we're showing all of them.
 				<div class="arch-pagination">
 					<span class='page-numbers current'>1</span>
 					<a class='page-numbers' href='#'>2</a>
@@ -94,6 +98,7 @@ get_header(); ?>
 					<a class='page-numbers' href='#'>8</a>
 					<a class="next page-numbers" href="#">&raquo;</a>
 				</div><!-- end pagination -->
+
 
 			</div><!-- end activity archive -->
 			</div><!-- end entry-content -->

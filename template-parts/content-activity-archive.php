@@ -41,6 +41,8 @@ if ( empty( $activity_args ) ) {
 	$activity_args = array( 'post_type' => 'activity', 'nopaging' => true );
 }
 
+$activity_args  = LearnMindUp_Queries::get_activity_list();
+
 $activity_query = new WP_Query( $activity_args );
 
 if ( $activity_query->have_posts() ) {
@@ -86,5 +88,11 @@ if ( $activity_query->have_posts() ) {
 	}
 
 	wp_reset_postdata();
+
+} else {
+
+	// Some basic content to handle "none found".
+
+	echo '<p>There were no activities matching your criteria. Please try again.</p>';
 
 } // endif $activity_query
