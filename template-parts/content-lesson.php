@@ -53,12 +53,6 @@
 
 		// Build Switch to decide what stuff to show on which steps
 		switch ( absint( $our_current_step ) ) {
-			case 2:
-				echo '<h2>Select Your Students Average Age </h2>' . PHP_EOL;
-				echo '<p class="copyblock-step-2">Don’t be overly concerned about being exact. We use this information to give you more specific language appropriate to this age range and age appropriate activities. You will always have the opportunity to see information for younger and older children, because we know age is just a number and your children are unique. Some may be an older 9 years, or a younger 17. We’ll also have the opportunity to choose activities for a wide range of special needs. </p>' . PHP_EOL;
-				echo lmnd_step_two_dropdown( $post->ID, false );
-				echo '<div class="step-two-content-holder"></div>';
-				break;
 			case 3:
 
 				// look at all this beautiful code
@@ -150,6 +144,7 @@
 
 				break;
 			case 1:
+			case 2:
 			case 6:
 				/*
 				 * run the content_type hyperloop
