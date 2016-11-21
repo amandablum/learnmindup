@@ -1925,6 +1925,33 @@ body.page-template-archive-activities #primary .darkbg a:active {
 }
 
 
+/* Reference List */
+.reference-list {
+	display:block; 
+	overflow:hidden; 
+	clear:both; 
+	margin: 0 0 1em 0;
+	}
+
+.reference-list .twocolumn-rightcopy h2 {
+	font-size: 1.85rem; 
+	letter-spacing: .001em; 
+	margin: 0; padding: 0;
+	}
+
+@media (min-width: 767px) {
+	.reference-list .twocolumn-leftmedia {
+		width: 30%; 
+		padding-top: 8px;
+		}
+
+	.reference-list .twocolumn-rightcopy {
+		width: 70%;
+		}
+}
+
+
+
 /*--------------------------------------------------------------
 # Pagebuilder
 --------------------------------------------------------------*/
