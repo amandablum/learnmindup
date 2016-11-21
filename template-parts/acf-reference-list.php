@@ -5,7 +5,15 @@
  * @package mindup
  * @author ChuckReynolds <chuck@vuurr.com>
  */
+?>
 
+<section class="acf reference-list reference-list-title">
+	<div class="container">
+		<h2><?php echo $title_of_section; ?></h2>
+	</div>
+</section>
+
+<?php
 if ( false !== $check = LearnMindUp_Helper::if_serialized_has_data( $reflis_repeater ) ) {
 
 	foreach( $reflis_repeater as $reference ) {

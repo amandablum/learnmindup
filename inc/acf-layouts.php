@@ -144,7 +144,9 @@ function acf_mindup_hyperloop_pagebuilder() {
 			if ( get_row_layout() == 'reference_list' ) :
 
 				// pull and sanitize vars
-				// moved into layout view in order to handle vars in loops
+				$title_of_section = sanitize_text_field( get_sub_field( 'title_of_section' ) ); // Text
+
+				// moved the rest into layout view in order to handle vars in loops
 
 				/**
 				 * Get repeater info
