@@ -138,6 +138,27 @@ function acf_mindup_hyperloop_pagebuilder() {
 			endif; // get_row_layout : constellation
 
 
+			/**
+			 * Content Type : reference_list
+			 */
+			if ( get_row_layout() == 'reference_list' ) :
+
+				// pull and sanitize vars
+				// moved into layout view in order to handle vars in loops
+
+				/**
+				 * Get repeater info
+				 * @return array
+				 * @see https://www.advancedcustomfields.com/resources/repeater/
+				 */
+				$reflis_repeater = get_sub_field( 'reflis_repeater' ); // Get all rows in repeater
+
+				// load the layout view
+				require get_template_directory() . '/template-parts/acf-reference-list.php';
+
+			endif; // get_row_layout : reference_list
+
+
 		endwhile; // end while have_rows content_type
 
 	else:

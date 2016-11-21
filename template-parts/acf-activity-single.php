@@ -14,11 +14,6 @@
 
 	<div class="entry-content lesson-activity">
 
-<?php
-// echo '<pre>';
-// var_dump( $activity_downloads );
-// echo '</pre>';
-?>
 		<div class="activity-details">
 			<?php
 			if ( has_post_thumbnail() ) {
