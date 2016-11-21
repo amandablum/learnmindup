@@ -1930,26 +1930,51 @@ body.page-template-archive-activities #primary .darkbg a:active {
 	display:block; 
 	overflow:hidden; 
 	clear:both; 
-	margin: 0 0 1em 0;
+	margin: 0 0 1.8em 0!important;
 	}
 
 .reference-list .twocolumn-rightcopy h2 {
-	font-size: 1.85rem; 
+	font-size: 1.3rem; 
 	letter-spacing: .001em; 
 	margin: 0; padding: 0;
 	}
 
+.reference-list .twocolumn-rightcopy p {
+	margin: .2em 0 1em 0; 
+	padding: 0;
+	font-size: .9rem;
+	}
+
+.reference-list a.btn {
+  font-size: .9rem!important;
+  font-weight:300;
+  letter-spacing:2px;
+  padding:6px 26px!important;
+  }
+
+.reference-list-title {
+	margin-bottom: 3em!important;
+	}
+
+.reference-list-title h2 {
+	margin-bottom: 0;
+	}
+  
 @media (min-width: 767px) {
 	.reference-list .twocolumn-leftmedia {
-		width: 30%; 
-		padding-top: 8px;
+		width: 22%; 
+		text-align: center;
 		}
-
+	
+	.reference-list .twocolumn-leftmedia img {
+		max-height: 140px;
+		}
+	
 	.reference-list .twocolumn-rightcopy {
-		width: 70%;
+		width: 78%;
+		padding-left: 0;
 		}
 }
-
 
 
 /*--------------------------------------------------------------
