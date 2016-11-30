@@ -547,6 +547,7 @@ hr {
 ul,
 ol {
 	margin: 0 0 1.5em 3em;
+	padding: 0;
 }
 
 ul {
@@ -561,6 +562,24 @@ li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
+}
+
+.content-area ul,
+.content-area ol {
+	overflow:hidden;
+	padding: 0 0 0 3em;
+	margin: 0 0 1.5em 0;
+	}
+
+.content-area li {
+	padding-left: .4em;
+	letter-spacing: 0;
+	}
+
+.content-area li > ul,
+.content-area li > ol {
+	padding: 0;
+	margin: 0;
 }
 
 dt {
