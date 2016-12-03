@@ -642,6 +642,13 @@ a.reset_variations {
     width: 115px;
     height: 81px;
 }
+.page-id-1413 .entry-footer {
+margin-top: 0;
+}
+.page-id-1413 article {
+    padding-bottom: 0; 
+    margin-bottom: 0;
+}
 /*--------------------------------------------------------------
 # Calendar
 --------------------------------------------------------------*/
