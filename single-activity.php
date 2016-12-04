@@ -22,7 +22,10 @@ get_header(); ?>
 
 	endwhile; // End of the loop.
 	?>
-
+<blockquote><p>SUGGEST YOUR OWN ACTIVITY<br>
+You’ve just seen activities from MindUP and many of our teachers. We’d love to hear about an activity you did, so we can share it with others.<br>
+<a href="http://learn.mindup.org/submit-an-activity/" target="_blank">Submit Activity</a></p>
+</blockquote>
 	</main><!-- #main -->
 </div><!-- #primary -->
 
