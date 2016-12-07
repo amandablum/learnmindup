@@ -1754,17 +1754,16 @@ p.lesson-progress-intro {
 	background: #cee7ef;
 }
 
-.darkbg {
+.author-mindup {
 	background: #09AAE2;
-	border-color: #fff;
 	color: #fff;
 }
 
-.darkbg:hover {
+.author-mindup:hover {
 	background: #1292be;
 }
 
-.darkbg h4 {
+.author-mindup h4 {
 	color: #fff!important;
 }
 
