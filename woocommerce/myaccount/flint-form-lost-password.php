@@ -25,9 +25,7 @@ wc_print_notices(); ?>
 	<?php
 	// If we have the reset part available, show the message.
 	if ( ! empty( $_GET['reset-link-sent'] ) ) {
-		echo '<div class="woocommerce-message">';
-			echo '<p>A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.</p>';
-		echo '</div>';
+		echo '<div class="woocommerce-message">Success! Please check your email for a link to create your login password.</div>';
 	}
 	?>
 
