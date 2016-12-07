@@ -22,6 +22,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wc_print_notices(); ?>
 
+	<?php
+	// If we have the reset part available, show the message.
+	if ( ! empty( $_GET['reset-link-sent'] ) ) {
+		echo '<div class="woocommerce-message">';
+			echo '<p>A password reset email has been sent to the email address on file for your account, but may take several minutes to show up in your inbox. Please wait at least 10 minutes before attempting another reset.</p>';
+		echo '</div>';
+	}
+	?>
+
 <form method="post" class="woocommerce-ResetPassword lost_reset_password">
 	<p class="woocommerce-form-row woocommerce-form-row--first form-row form-row-first">
 		<label for="user_login"><?php _e( 'Email', 'woocommerce' ); ?></label>
