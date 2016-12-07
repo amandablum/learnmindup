@@ -20,7 +20,7 @@ if ( $activity_query->have_posts() ) {
 		$terms_subject   = get_terms( 'subject' );
 		$terms_needs     = get_terms( 'needs' );
 		?>
-		<div class="row-item">
+		<div class="row-item <?php echo 'author-' . get_the_author_meta( 'login' ); ?>">
 			<a href="<?php echo get_permalink(); ?>" target="_blank">
 
 				<?php the_title( '<h4>', '</h4>' ); ?>
