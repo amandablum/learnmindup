@@ -367,7 +367,10 @@ h4 {
 	font-size: 1.125rem;
 	font-weight: 800;
 }
-
+h6 {
+	color: #12A79E;
+	font-weight:9800;
+}
 p {
 	margin-bottom: 1.5em;
 }
@@ -395,12 +398,18 @@ i {
 }
 
 blockquote {
-	margin: 0;
-	padding: 30px 30px 30px 40px;
-	border-left: 4px solid #09aae2;
-	font-size: 1.5rem;
-	font-weight: 300;
-	clear: both;
+	border: none;
+    background: #09aae2;
+    color: #fff;
+    font-style: italic;
+    margin: 20px 8px;
+    -webkit-box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+    -moz-box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+    box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+    font-weight: 300;
+    clear: none;
+    padding: 20px;
+    font-size: 1.2rem;
 }
 
 blockquote p:last-child {
@@ -412,6 +421,50 @@ blockquote.pullquote {
 	float: left;
 	font-weight: 300;
 	clear: none;
+}
+
+blockquote.full-width-background {
+	border: none;
+	background: #09aae2;
+	color: #fff;
+	font-style: italic;
+	margin: 0 8px;
+	-webkit-box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+	-moz-box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+	box-shadow: 0px 0px 0px 8px rgba(85,190,227,1);
+}
+
+.tip-full {
+	display: block;
+	overflow: hidden;
+	margin: 8px 2px;
+	padding: 30px 30px 30px 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	background: #12A79E;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	-moz-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	border-radius: 18px;
+	min-width: 180px;
+}
+
+.tip-quarter {
+	display:inline-block;
+	width: 25%;
+	overflow: hidden;
+	margin: 8px 2px;
+	padding: 30px 30px 30px 30px;
+	font-size: 1rem;
+	font-weight: 600;
+	background: #09aae2;
+	color: #fff;
+	-webkit-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	-moz-box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	box-shadow: 0px 0px 0px 2px rgba(85,190,227,1);
+	border-radius: 18px;
+	min-width: 180px;
 }
 
 address {
@@ -494,6 +547,7 @@ hr {
 ul,
 ol {
 	margin: 0 0 1.5em 3em;
+	padding: 0;
 }
 
 ul {
@@ -508,6 +562,24 @@ li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
+}
+
+.content-area ul,
+.content-area ol {
+	overflow:hidden;
+	padding: 0 0 0 3em;
+	margin: 0 0 1.5em 0;
+	}
+
+.content-area li {
+	padding-left: .4em;
+	letter-spacing: 0;
+	}
+
+.content-area li > ul,
+.content-area li > ol {
+	padding: 0;
+	margin: 0;
 }
 
 dt {
@@ -569,6 +641,13 @@ a.reset_variations {
 .site-footer .footerCol1 #text-4 img {
     width: 115px;
     height: 81px;
+}
+.page-id-1413 .entry-footer {
+margin-top: 0;
+}
+.page-id-1413 article {
+    padding-bottom: 0; 
+    margin-bottom: 0;
 }
 /*--------------------------------------------------------------
 # Calendar
@@ -699,6 +778,91 @@ a.reset_variations {
 .diagram .social-kindness.active { fill: #8e356c; }
 .diagram .social-action { fill: #993a4c; }
 .diagram .social-action.active { fill: #993a4c; }
+
+
+
+
+/* Lesson / Steps Progress bar. stole this from bootstrap:4alpha
+ * @see https://v4-alpha.getbootstrap.com/dist/css/bootstrap.css
+ */
+progress {
+	display: inline-block;
+	vertical-align: baseline;
+	margin-top: 50px;
+}
+.progress {
+  display: block;
+  width: 100%;
+  height: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress[value] {
+  background-color: #eee;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 0.25rem;
+}
+
+.progress[value]::-ms-fill {
+  background-color: #0074d9;
+  border: 0;
+}
+
+.progress[value]::-moz-progress-bar {
+  background-color: #0074d9;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.progress[value]::-webkit-progress-value {
+  background-color: #0074d9;
+  border-bottom-left-radius: 0.25rem;
+  border-top-left-radius: 0.25rem;
+}
+
+.progress[value="100"]::-moz-progress-bar {
+  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.progress[value="100"]::-webkit-progress-value {
+  border-bottom-right-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 0.25rem;
+}
+
+base::-moz-progress-bar,
+.progress[value] {
+  background-color: #eee;
+  border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 0\0) {
+  .progress {
+    background-color: #eee;
+    border-radius: 0.25rem;
+  }
+  .progress-bar {
+    display: inline-block;
+    height: 1rem;
+    text-indent: -999rem;
+    background-color: #0074d9;
+    border-bottom-left-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+  }
+  .progress[width="100%"] {
+    border-bottom-right-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Forms
@@ -987,7 +1151,7 @@ body.blog #secondary {
 	padding-right: 14px;
 }
 
-body.single #primary,
+body.single:not(.single-lesson) #primary,
 body.blog #primary {
 	width: 74%;
 	float: right;
@@ -1388,6 +1552,463 @@ article h2.entry-title {
 }
 
 
+/* activity template-part */
+.activity-details {
+	display: block;
+	overflow: hidden;
+}
+
+.activity-details img {
+	float: left;
+	margin: 0 10px 0 0;
+	border: 1px solid #324459;
+}
+
+.activity-details .activity-term-list-label {
+	font-weight: 700;
+}
+
+.lesson-activity ul {
+	margin-left: 1em;
+}
+
+/* step list inside the member setup */
+.member-list-step-items {
+	list-style: none;
+	margin: 0;
+	padding: 1em 0.5em;
+}
+
+
+/* Lesson Steps Progress */
+.step-link-wrapper {
+	clear: both;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	padding: 1.5em 0 0;
+}
+
+.step-link-wrapper .step-link-prev {
+	float: left;
+}
+
+.step-link-wrapper .step-link-next {
+	float: right;
+}
+
+.step-link-wrapper .step-link-prev a.btn,
+.step-link-wrapper .step-link-next a.btn {
+	display: block;
+}
+
+p.lesson-progress-intro {
+	color: #324459;
+	font-weight: normal;
+	font-size: 1.1rem;
+	text-align:center;
+	clear:both;
+	display:block;
+	padding: 10px 0 0 0;
+	margin: 0 0 12px 0;
+}
+
+.progress-single-title {
+	font-size: .9rem; 
+	font-weight: normal; 
+	letter-spacing: .01em;
+	max-width: 48%;
+	}
+	
+.progress-single-title-left {
+	float:left;
+	}
+	
+.progress-single-title-right {
+	float:right;
+	}
+
+.lesson-progress-wrapper progress {
+	margin-top: 0;
+	}
+	
+.lesson-progress-wrapper {
+	display:block; 
+	overflow:hidden; 
+	margin: 0 0 4em 0;
+	}
+
+
+/* activity archive */
+#actarch {
+	background: #f3a129;
+	padding: 16px 16px 34px 32px;
+	margin: 10px 0 0 0;
+}
+
+#archfilt {
+	margin: 12px 0 28px -12px;
+}
+
+#archfilt .activity-select-filter {
+ 	color: #fff;
+ 	font-size: .9rem;
+ 	letter-spacing: .03em;
+ 	font-weight: 300;
+ 	display: inline-block;
+ 	margin: 0 6px 0 6px;
+}
+
+#archfilt label {
+	float:left;
+	margin-right: 10px;
+	display:inline-block;
+	overflow:hidden;
+	line-height: 1.2em;
+	vertical-align: middle;
+	height: 37px;
+	display: flex;
+  align-items: center;
+}
+
+#archfilt button, #archfilt input, #archfilt select, #archfilt textarea {
+  float:left;
+  font-family:"Open Sans", sans-serif;
+  font-size:.9rem;
+  font-weight:400;
+  line-height:1.5;
+	padding-left: 12px;
+	-webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  color: inherit;
+  background: #f3a129;
+  border: 1px solid #fff;
+  background-image:
+          linear-gradient(45deg, transparent 50%, #fff),
+          linear-gradient(135deg, #fff, transparent 50%),
+          linear-gradient(to right, #fff, #fff);
+  background-position:
+          calc(100% - 20px) calc(1em + 0px),
+          calc(100% - 15px) calc(1em + 0px),
+          calc(100% - 2.5em) 0.4em;
+  background-size:
+          5px 5px,
+          5px 5px,
+          1px 1.5em;
+  background-repeat: no-repeat;
+  width: 160px !important;
+	height: 37px;
+}
+
+#archfilt button, #archfilt input[type="button"], #archfilt input[type="reset"], #archfilt input[type="submit"] {
+  background:#FFF;
+  border:0;
+  border-radius:40px;
+  color: #FCB54D;
+  font-size:.9rem;
+  letter-spacing:2px;
+  line-height:1;
+  padding:	0.2em .8em 0.2em !important;
+  text-transform:uppercase;
+  transition:all 0.2s ease;
+  float:right;
+  margin: 0;
+}
+
+#archfilt button:hover, #archfilt input[type="button"]:hover, #archfilt input[type="reset"]:hover, #archfilt input[type="submit"]:hover {
+	background: #ffeacb;
+}
+
+.row {
+	clear: both;
+	padding: 0 0 0 12px;
+	margin: 0;
+}
+
+.row:before,
+.row:after { content:""; display:table;}
+.row:after { clear:both;}
+.row { zoom:1; /* For IE 6/7 */}
+
+.row-item {
+	display: inline-block;
+	position: relative;
+	float:left;
+	min-height: 330px;
+	background: #fff;
+	width: 31%;
+	margin: 20px 20px 0 0;
+	-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 16px 16px 0 16px;
+  border: 4px solid #09AAE2;
+}
+
+.row-item:hover {
+	background: #cee7ef;
+}
+
+.author-mindup {
+	background: #09AAE2;
+	color: #fff;
+}
+
+.author-mindup:hover {
+	background: #1292be;
+}
+
+.author-mindup h4 {
+	color: #fff!important;
+}
+
+body.page-template-archive-activities h3 {
+	font-family: "Permanent Marker", cursive;
+}
+
+body.page-template-archive-activities h1.entry-title {
+	text-align: center;
+}
+
+h3.lesson-step {
+	color: #324459;
+	font-weight: normal;
+	letter-spacing: .03em;
+	font-size: 1.2rem;
+	margin: 0;
+	padding: 0 0 0 42px;
+}
+
+.row-item h4 {
+	color: #09AAE2;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: .001em;
+	margin: 0;
+	line-height: 1.2em;
+	font-size: 1.3rem;
+}
+
+.row-item a {display:block;}
+
+body.page-template-archive-activities .activity-details {
+	font-size: .9rem;
+	margin: 8px 0;
+	font-weight: 600;
+}
+
+.entry-preview p {
+	margin: 0;
+	padding: 0;
+}
+
+.entry-preview {
+	padding: 16px 0;
+	font-size: 1.1rem;
+	line-height: 1.2em;
+}
+
+.right-arrow {
+	font-size: 3rem;
+	line-height: .8em;
+	text-align: right;
+	display:block;
+	padding: 0 12px 6px 0;
+	color: #f3a129;
+	text-shadow: 0 1px 0px #fff;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+body.page-template-archive-activities #primary .row-item a,
+body.page-template-archive-activities #primary .row-item a:hover,
+body.page-template-archive-activities #primary .row-item a:visited,
+body.page-template-archive-activities #primary .row-item a:active {
+	color: #324459;
+	text-transform: none;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+body.page-template-archive-activities #primary .row-item a:hover,
+body.page-template-archive-activities #primary .row-item a:active {
+	color: #324459!important;
+}
+
+body.page-template-archive-activities #primary .darkbg a,
+body.page-template-archive-activities #primary .darkbg a:hover,
+body.page-template-archive-activities #primary .darkbg a:visited,
+body.page-template-archive-activities #primary .darkbg a:active {
+	color: #fff;
+	text-transform: none;
+	text-decoration: none;
+	font-weight: 400;
+}
+
+body.page-template-archive-activities #primary .darkbg a:hover,
+body.page-template-archive-activities #primary .darkbg a:active {
+	color: #fff!important;
+}
+
+.arch-pagination {
+	display:block;
+	text-align: center;
+	font-size: 0.875rem;
+	padding: 20px 0;
+	margin: 30px 0 0 -25px;
+}
+
+.arch-pagination a.prev {
+	display: none;
+}
+
+.arch-pagination .page-numbers {
+	border: 1px solid #fff;
+	padding: 4px 8px;
+	color: #474e5d;
+	margin: 0 4px;
+}
+
+#primary .arch-pagination a.page-numbers,
+#primary .arch-pagination a.page-numbers:visited,
+#primary .arch-pagination a.page-numbers:hover,
+#primary .arch-pagination a.page-numbers:active {
+	color: #fff;
+	font-weight: 400;
+}
+
+.arch-pagination .page-numbers.current {
+	background: #fff;
+	color: #FCB54D;
+	border: 0;
+	border: 1px solid #fff;
+}
+
+.arch-pagination .page-numbers.dots {
+	border: 0;
+	padding-bottom: 0;
+}
+.sel {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #aaaaaa;
+    font-style: italic;
+}
+.blue {
+    color: #12A79E;
+    font-weight: 700;
+    font-style: normal;
+}
+.clear{
+	clear:both;
+}
+
+@media (max-width: 1150px) {
+	.row-item {
+		width: 42%;
+	}
+	#archfilt {
+		text-align: center;
+	}
+}
+
+@media (max-width: 800px) {
+	#actarch {
+		padding: 16px 24px 16px 16px;
+		margin: 0 0 0 0;
+	}
+	.row-item {
+		width: 100%;
+		min-height: auto;
+		margin: 20px 0 0 0;
+		padding-bottom: 12px;
+	}
+	h3.lesson-step {
+		padding: 0;
+		text-align: center;
+	}
+	#archfilt button, #archfilt input[type="button"], #archfilt input[type="reset"], #archfilt input[type="submit"] {
+		display:block;
+		float:none;
+		margin: 12px auto 0 auto;
+	}
+	#archfilt label {
+		width: 80px;
+		text-align: right!important;
+		display:inline-block;
+		text-align: right;
+	}
+	.arch-pagination {
+		margin: 30px 0 0 0;
+	}
+}
+
+
+/* Reference List */
+.reference-list {
+	display:block; 
+	overflow:hidden; 
+	clear:both; 
+	margin: 0 0 1.8em 0!important;
+}
+
+.reference-list .twocolumn-rightcopy h2 {
+	font-size: 1.3rem; 
+	letter-spacing: .001em; 
+	margin: 0; padding: 0;
+}
+
+.reference-list .twocolumn-rightcopy p {
+	margin: .2em 0 1em 0; 
+	padding: 0;
+	font-size: .9rem;
+}
+
+.reference-list a.btn {
+  font-size: .9rem!important;
+  font-weight:300;
+  letter-spacing:2px;
+  padding:6px 26px!important;
+ }
+
+.reference-list-title {
+	margin-bottom: 1.8em!important;
+}
+
+.reference-list-title h2 {
+	margin-bottom: 0;
+}
+
+.reference-list .twocolumn-rightcopy h2 a,
+.reference-list .twocolumn-rightcopy h2 a:visited,
+.reference-list .twocolumn-rightcopy h2 a:active {
+	color: #09AAE2!important;
+}	
+  
+  
+@media (min-width: 767px) {
+	.reference-list .twocolumn-leftmedia {
+		width: 22%; 
+		text-align: center;
+		}
+	
+	.reference-list .twocolumn-leftmedia img {
+		max-height: 140px;
+		}
+	
+	.reference-list .twocolumn-rightcopy {
+		width: 78%;
+		padding-left: 0;
+		}
+}
+
+
 /*--------------------------------------------------------------
 # Pagebuilder
 --------------------------------------------------------------*/
@@ -1420,7 +2041,7 @@ article h2.entry-title {
 
 .acf {
 	clear: both;
-	margin-bottom: 80px;
+	margin-bottom: 50px;
 }
 
 .acf:last-child {
@@ -1430,7 +2051,6 @@ article h2.entry-title {
 .acf h2 {
 	margin-top: 0;
 }
-
 
 .onecolumnhero .container.image {
 	background-repeat: no-repeat;
@@ -1458,6 +2078,7 @@ article h2.entry-title {
 	font-size: 30px;
 	padding: 0 25%;
 	margin: 0 0 25px 0;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
 }
 
 #primary .onecolumnhero a.btn,
@@ -2452,6 +3073,7 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
@@ -2623,7 +3245,6 @@ object {
 .gallery-caption {
 	display: block;
 }
-
 
 /*--------------------------------------------------------------
 ## Responsive Media Queries

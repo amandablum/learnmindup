@@ -2,7 +2,7 @@
 /**
  * 'Default' ACF Pagebuilder Template
  *
- * Template Name: ACF Pagebuilder
+ * Template Name: flintpassword
  *
  * @package mindup
  * @author ChuckReynolds <chuck@vuurr.com>
@@ -17,7 +17,12 @@ get_header(); ?>
 		/*
 		 * run the content_type hyperloop
 		 */
-		do_action( 'mindup_hyperloop_pagebuilder' ); ?>
+				while ( have_posts() ) : the_post();
+
+			get_template_part( 'template-parts/content', 'page' );
+
+		endwhile; // End of the loop.
+		wc_get_template( 'myaccount/flint-form-lost-password.php', array( 'form' => 'lost_password' ) ); ?>
 
 	</main><!-- #main -->
 </div><!-- #primary -->

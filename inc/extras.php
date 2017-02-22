@@ -7,6 +7,37 @@
  * @package mindup
  */
 
+
+/**
+ * We need to check if this is a Lesson post, if it's a parent, and if it has children.
+ * If all that is true, then we need to redirect the main parent (lesson) to first child (step).
+ */
+function lmnd_parent_lesson_redirect() {
+
+	// If this is not lesson post type, bail.
+	if ( ! is_singular( 'lesson' ) ) return;
+
+	// Now pull the global $post object so we can map it.
+	global $post;
+
+	// If this is not a parent lesson, bail.
+	if ( ! empty( $post->post_parent ) ) return;
+
+	// If post parent does not have children, bail.
+	$lmnd_parent_child_count = count( get_posts( array( 'post_parent' => $post->ID, 'post_type' => $post->post_type ) ) );
+	if ( ! $lmnd_parent_child_count ) return;
+
+	// Gets the first child step and redirects to it
+	$first_lesson_step_id  = key( LearnMindUp_Queries::get_single_lesson_steps( get_the_ID() ) );
+	$first_lesson_step_url = get_permalink( $first_lesson_step_id );
+
+	// Finally, redirect.
+	wp_redirect( $first_lesson_step_url ); exit();
+
+}
+add_action( 'template_redirect', 'lmnd_parent_lesson_redirect' );
+
+
 /**
  * Adds custom classes to the array of body classes.
  *
