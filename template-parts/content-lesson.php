@@ -16,22 +16,36 @@
 		 *
 		 * If child (step) then display parent title and step title under it.
 		 */
-		if ( empty( $post->post_parent ) ) {
 
-			the_title( '<h1 class="entry-title">', '</h1>' );
+		// Handle our restricted content display.
+		if ( ! current_user_can( 'wc_memberships_view_restricted_post_content', $post->ID ) ) {
 
+			// Determine if we have a parent ID or not.
+			$parent_tt  = empty( $post->post_parent ) ? get_the_title( $post->ID ) : get_the_title( $post->post_parent );
+
+			// Show the parent title.
+			echo '<h1 class="entry-title">' . $parent_tt . '</h1>' . PHP_EOL;
 		} else {
 
-			// Get the parent post title
-			$lmnd_parent_title     = get_the_title( $post->post_parent );
-			// Get the parent post permalink
-			$lmnd_parent_permalink = get_permalink( $post->post_parent );
-			// Display parent title and link
-			echo '<a href="' . $lmnd_parent_permalink . '"><h1 class="entry-title">' . $lmnd_parent_title . '</h1></a>' . PHP_EOL;
-			// Display child (step) title
-			the_title( '<h3 class="lesson-step">', '</h3>' );
+			if ( empty( $post->post_parent ) ) {
+
+				the_title( '<h1 class="entry-title">', '</h1>' );
+
+			} else {
+
+				// Get the parent post title
+				$lmnd_parent_title     = get_the_title( $post->post_parent );
+				// Get the parent post permalink
+				$lmnd_parent_permalink = get_permalink( $post->post_parent );
+				// Display parent title and link
+				echo '<a href="' . $lmnd_parent_permalink . '"><h1 class="entry-title">' . $lmnd_parent_title . '</h1></a>' . PHP_EOL;
+				// Display child (step) title
+				the_title( '<h3 class="lesson-step">', '</h3>' );
+
+			}
 
 		}
+
 		?>
 	</header><!-- .entry-header -->
 
