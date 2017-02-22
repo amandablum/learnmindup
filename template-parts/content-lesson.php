@@ -41,6 +41,16 @@
 		// If this is a parent lesson, don't do anything further, bail.
 		if ( empty( $post->post_parent ) ) return;
 
+		// Handle our restricted content display.
+		if ( ! current_user_can( 'wc_memberships_view_restricted_post_content', $post->ID ) ) {
+
+			// Show the message.
+			echo '<div class="woocommerce"><div class="woocommerce-info wc-memberships-restriction-message wc-memberships-message wc-memberships-content-restricted-message">' . wc_memberships()->get_frontend_instance()->get_content_restricted_message( $post->ID ) . '</div></div>';
+
+			// And bail.
+			return;
+		}
+
 		/**
 		 * At this point we know we're on a child lesson (step) post
 		 */
@@ -170,6 +180,7 @@
 			case 1:
 			case 2:
 			case 6:
+
 				/*
 				 * run the content_type hyperloop
 				 */
